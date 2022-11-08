@@ -1,0 +1,25 @@
+## Interface: 100000
+## Interface-Classic: 11403
+## Interface-BCC: 20504
+## Interface-Wrath: 30400
+
+## Version: 1.0
+## Title: Kapresoft|cff1784d1LibUtil|r
+## Notes: Kapresoft WoW API Interface Library
+## Author: kapresoft@gmail.com
+## Version: @project-version@
+## X-Category: Library
+## X-eMail: kapresoft@gmail.com
+## X-License: MIT License
+
+## X-Github-Repo: https://github.com/kapresoft/wow-api-interface
+## X-Github-Issues: https://github.com/kapresoft/wow-api-interface/issues
+## X-Github-Project-Author: @project-author@
+## X-Github-Project-Hash: @project-hash@
+## X-Github-Project-Last-Changed-Date: @project-date-iso@
+## X-Github-Project-Version: @project-version@
+
+## LoadOnDemand: 1
+
+External\_External.xml
+_Lib.xml

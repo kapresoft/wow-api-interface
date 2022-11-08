@@ -1,0 +1,37 @@
+#!/usr/bin/env zsh
+# run in interactive mode by passing a boolean or int 1 or 0 arg
+# ./run-lua true or ./run-lua 1
+
+function __Main()
+{
+  local luaFilename=$1
+  local isInteractive=$2
+  local workdir=.
+
+  if [[ "${luaFilename}" = "-h" ]] || [[ "$1" = "" ]]; then
+    echo "Usage: ./dev/run-lua <lua-filename>.lua [1:isInteractive]"
+    echo "  Example #1:"
+    echo "    ./dev/run-lua test-mixin"
+    echo "  Example #2: Interactive Mode"
+    echo "    ./dev/run-lua test-mixin 1"
+    exit 0
+  fi
+
+  local externalLib='External/?.lua'
+  local projectLib="${workdir}/Lib/?.lua"
+  local localLibs="${externalLib};${projectLib}"
+
+  export LUA_PATH="${LUA_PATH};${localLibs}"
+  echo LUA_PATH=${LUA_PATH}
+
+  local luaArgs=
+  if [[ "${isInteractive}" = 'true' ]] || [[ "${isInteractive}" = '1' ]]; then
+    luaArgs='-i'
+  fi
+  local cmd="lua $luaArgs ./dev/${luaFilename}.lua"
+  echo Executing: $cmd
+  eval "$cmd"
+}
+
+__Main $*
+
