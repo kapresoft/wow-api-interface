@@ -1,2 +1,2 @@
 # wow-api-lib-stubs
-World of Warcraft API Stub Functions
+World of Warcraft API Interface Stub Functions
