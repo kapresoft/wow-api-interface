@@ -4,6 +4,7 @@
 
     <Script file="LibStub.lua"/>
 
+    <Script file="AceAddon.lua"/>
     <Script file="AceConfig.lua"/>
     <Script file="AceConfigDialog.lua"/>
     <Script file="AceConsole.lua"/>
