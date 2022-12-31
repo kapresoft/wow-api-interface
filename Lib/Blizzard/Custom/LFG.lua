@@ -31,3 +31,27 @@ local dpeData = {
     name = 'The Nexus',
     orderIndex = 0,
 }
+
+---@class ActivityInfo
+local activityInfoTable = {
+    fullName = "string",
+    shortName = "string",
+    categoryID = 1,
+    groupFinderActivityGroupID = 1,
+    ilvlSuggestion = 1,
+    minLevel = 1,
+    maxNumPlayers = 1,
+    displayType = 1,
+    orderIndex = 1,
+    useHonorLevel = true|false,
+    showQuickJoinToast = true|false,
+    isMythicPlusActivity = true|false,
+    isRatedPvpActivity = true|false,
+    isCurrentRaidActivity = true|false,
+    isPvpActivity = true|false,
+    isMythicActivity = true|false,
+    allowCrossFaction = true|false,
+    useDungeonRoleExpectations = true|false,
+    filters = 1,
+}
+
