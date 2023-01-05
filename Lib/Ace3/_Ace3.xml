@@ -13,6 +13,7 @@
     <Script file="AceEvent.lua"/>
     <Script file="AceGUI.lua"/>
     <Script file="AceHook.lua"/>
+    <Script file="AceLocale.lua"/>
     <Script file="AceLibSharedMedia.lua"/>
 
 </Ui>

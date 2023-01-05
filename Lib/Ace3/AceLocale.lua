@@ -1,0 +1,4 @@
+---@class AceLocale
+local AceLocale = {
+
+}
