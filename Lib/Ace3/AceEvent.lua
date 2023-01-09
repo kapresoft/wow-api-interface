@@ -28,7 +28,7 @@ local _AceEvent = {
     --- Additional arguments: ... Any arguments to the message
     --- @param self AceEvent
     --- @param message string The message to send
-    SendMessage = function(self, message, callback, ...)  end,
+    SendMessage = function(self, message, ...)  end,
 
     --- @param self AceEvent
     UnregisterAllEvents = function(self)  end,
