@@ -9,8 +9,8 @@ local A = {}
 function A:GetScript(scriptType, bindingType) end
 
 ---Sets the widget's script handler.
----@param scriptType string Name of the script type, e.g. "OnShow".
----@param handler function The function to call when handling the specified widget event, or nil to remove any existing script.
+---@param scriptType ScriptType Name of the script type, e.g. "OnShow".
+---@param handler ScriptTypeEventHandler The function to call when handling the specified widget event, or nil to remove any existing script.
 function A:SetScript(scriptType, handler) end
 
 ---Securely hooks a script handler.
