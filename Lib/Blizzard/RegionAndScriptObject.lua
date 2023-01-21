@@ -6,10 +6,11 @@ local A = {}
 function A:GetSourceLocation() end
 
 ---Parents this to another object. Parented objects will inherit their scale & visibility.
----@param parent _Region | _ParentedObject | string
+---@param parent RegionReference
 function A:SetParent(parent) end
 
 ---True if this Region or its Parent is being dragged. - New in 3.1.0
+---@return boolean
 function A:IsDragging() end
 
 ---Checks whether the mouse is over the frame (or within specified offsets).
@@ -17,11 +18,14 @@ function A:IsDragging() end
 ---@param bottom number
 ---@param left number
 ---@param right number
+---@return boolean
 function A:IsMouseOver(top, bottom, left, right) end
 
+---@return boolean
 function A:IsObjectLoaded() end
 
 ---Indicates if this object can be manipulated in certain ways by tainted code in combat or not
+---@return boolean
 function A:IsProtected() end
 
 ---@return boolean
@@ -31,11 +35,11 @@ function A:CanChangeProtectedState() end
 function A:GetPoint(index) end
 
 ---Defines an attachment point of this region.
----@param point string
----@param relativeTo _Region | _ParentedObject | string
----@param relativePoint string
----@param ofsx number
----@param ofsy number
+---@param point RegionPointString The point of this region. 'TOPLEFT', 'CENTER', etc...
+---@param relativeTo RegionReference The reference
+---@param relativePoint RegionPointString The point of the other region to anchor to. If omitted, defaults to 'point'.
+---@param ofsx Number Offset right (negative for left). Requires ofsy to be specified.
+---@param ofsy Number Offset up (negative for down). Requires ofsx to be specified.
 function A:SetPoint(point, relativeTo, relativePoint, ofsx, ofsy) end
 
 ---Defines attachment points for this region to match edges of the specified frame.
@@ -51,6 +55,7 @@ function A:GetNumPoints() end
 ---@return boolean
 function A:IsAnchoringRestricted() end
 
+---@return string
 function A:GetPointByName() end
 function A:ClearPointByName() end
 
@@ -151,9 +156,11 @@ function A:Hide() end
 function A:SetShown() end
 
 ---Indicates the region will appear, but only while its parent appears or if it has no parent
+---@return boolean
 function A:IsShown() end
 
 ---Indicates the region and its parent (if any) are currently appearing
+---@return boolean
 function A:IsVisible() end
 
 ---Returns the object's set opacity between 0 and 1 (normally relative to its parent)
@@ -168,6 +175,7 @@ function A:SetAlpha(alpha) end
 function A:SetIgnoreParentAlpha(booleanValue) end
 
 ---Indicates the region has a manually defined opacity uninherited from its parent
+---@return boolean
 function A:IsIgnoringParentAlpha() end
 
 --Constructs a new AnimationGroup as a child of this Region. - New in 3.1.0
@@ -191,11 +199,13 @@ _ScriptObject Methods (Manually Copied)
 function A:GetScript(scriptType, bindingType) end
 
 ---Sets the widget's script handler.
+---#### See Also [https://wowpedia.fandom.com/wiki/Widget_script_handlers](https://wowpedia.fandom.com/wiki/Widget_script_handlers)
 ---@param scriptType string Name of the script type, e.g. "OnShow".
 ---@param handler function The function to call when handling the specified widget event, or nil to remove any existing script.
 function A:SetScript(scriptType, handler) end
 
 ---Securely hooks a script handler.
+---#### See Also [https://wowpedia.fandom.com/wiki/Widget_script_handlers](https://wowpedia.fandom.com/wiki/Widget_script_handlers)
 ---@param scriptType string Name of the script type, e.g. "OnShow".
 ---@param handler function The function to call when handling the specified widget event, or nil to remove any existing script.
 ---@param bindingType number? Specifies an intrinsic frame's pre/post handler (optional)
@@ -203,13 +213,16 @@ function A:HookScript(scriptType, handler, bindingType) end
 
 ---Returns whether the widget supports a script type.
 ---@param scriptType string Name of the script type, e.g. "OnShow".
+---#### See Also [https://wowpedia.fandom.com/wiki/Widget_script_handlers](https://wowpedia.fandom.com/wiki/Widget_script_handlers)
 function A:HasScript(scriptType) end
 
 ---Run when the frame is created.
+---#### See Also [https://wowpedia.fandom.com/wiki/Widget_script_handlers](https://wowpedia.fandom.com/wiki/Widget_script_handlers)
 ---@param self _ScriptObject | _Frame
 function A:OnLoad(self) end
 
 ---Run each time the screen is drawn by the game engine.
+---#### See Also [https://wowpedia.fandom.com/wiki/Widget_script_handlers](https://wowpedia.fandom.com/wiki/Widget_script_handlers)
 ---@param self _ScriptObject | _Frame
 ---@param elapsed number The time in seconds since the last OnUpdate dispatch, but excluding time when the user interface was not being drawn such as while zoning into the game world
 function A:OnUpdate(self, elapsed) end
