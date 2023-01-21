@@ -2,6 +2,8 @@
 local A = {}
 
 ---Register for notifications when an event occurs.
+---#### See: [https://wowpedia.fandom.com/wiki/Events](https://wowpedia.fandom.com/wiki/Events)
+---@param event FrameEvent
 function A:RegisterEvent(event) end
 
 ---Register for notifications when events apply to certain units.
