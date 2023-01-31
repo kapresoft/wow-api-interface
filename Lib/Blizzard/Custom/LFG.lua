@@ -4,26 +4,26 @@
 --- - Interface\AddOns\Blizzard_LookingForGroupUI\Blizzard_LFGListing.lua
 --- - Interface\SharedXML\DataProvider.lua
 
----@class LFGListingFrameActivityViewScrollBox
+--- @class LFGListingFrameActivityViewScrollBox
 local view = {
-    ---@type fun(self:LFGListingFrameActivityViewScrollBox) : DataProvider
+    --- @type fun(self:LFGListingFrameActivityViewScrollBox) : DataProvider
     GetDataProvider = function() end
 }
 
 ---@class DataProvider
 local dp = {
-    ---@type fun(self:DataProvider, filterFn:fun(elem:DataProviderElement):boolean) : DataProviderElement
+    ---@type fun(self:DataProvider, filterFn:FindElementDataByPredicateFilterFn) : DataProviderElement
     FindElementDataByPredicate = function(filterFn)  end
 }
 
----@class DataProviderElement
+--- @class DataProviderElement
 local dpe = {
-    ---@type DataProviderElementData
+    --- @type DataProviderElementData
     data = nil,
-    ---@type fun(self:DataProviderElement):DataProviderElementData
+    --- @type fun(self:DataProviderElement):DataProviderElementData
     GetData = function(self) end
 }
----@class DataProviderElementData
+--- @class DataProviderElementData
 local dpeData = {
     activityID = 1132,
     buttonType = 2,
@@ -32,7 +32,7 @@ local dpeData = {
     orderIndex = 0,
 }
 
----@class ActivityInfo
+--- @class ActivityInfo
 local activityInfoTable = {
     allowCrossFaction = true|false,
     categoryID = 1,
@@ -59,3 +59,18 @@ local activityInfoTable = {
     useHonorLevel = true|false,
 }
 
+---``` local name, groupType, isHeroic, isChallengeMode, displayHeroic, displayMythic, toggleDifficultyID = GetDifficultyInfo(id) ```
+--- #### See
+--- - GetDifficultyInfo(id:number)
+--- - [https://wowpedia.fandom.com/wiki/API_GetDifficultyInfo](https://wowpedia.fandom.com/wiki/API_GetDifficultyInfo)
+--- - [https://wowpedia.fandom.com/wiki/DifficultyID](https://wowpedia.fandom.com/wiki/DifficultyID)
+--- @class DifficultyInfo
+local difficultyInfo = {
+    name = "10 Player (Heroic)"|'Heroic'|'Normal',
+    groupType = 'party'|'raid',
+    isHeroic = true|false,
+    isChallengeMode = true|false,
+    displayHeroic = true|false,
+    displayMythic = true|false,
+    toggleDifficultyID = 1,
+}
