@@ -4,16 +4,37 @@
 --- - Interface\AddOns\Blizzard_LookingForGroupUI\Blizzard_LFGListing.lua
 --- - Interface\SharedXML\DataProvider.lua
 
+--- @class LFGListingFrameActivityViewScrollBoxView
+local LFGListingFrameActivityViewScrollBoxView = {
+    --- @type fun(self:LFGListingFrameActivityViewScrollBoxView, handler:function) : table
+    ForEachFrame = {},
+}
 --- @class LFGListingFrameActivityViewScrollBox
-local view = {
+local LFGListingFrameActivityViewScrollBox = {
     --- @type fun(self:LFGListingFrameActivityViewScrollBox) : DataProvider
-    GetDataProvider = function() end
+    GetDataProvider = function() end,
+    --- @type LFGListingFrameActivityViewScrollBoxView
+    view = {},
+}
+
+--- @class LFGFrameGroup
+local LFGFrameGroup = {
+    --- @class LFGFrameGroupNameButton : _Button
+    NameButton = {
+        hooked = false,
+        --- @type _FontString
+        Name = {}
+    },
+    --- @class LFGFrameGroupCheckButton : _Frame
+    CheckButton = {},
 }
 
 ---@class DataProvider
 local dp = {
-    ---@type fun(self:DataProvider, filterFn:FindElementDataByPredicateFilterFn) : DataProviderElement
-    FindElementDataByPredicate = function(filterFn)  end
+    ---@type fun(self:DataProvider, filterFn:DataProviderFilterFn) : DataProviderElement
+    FindElementDataByPredicate = function(filterFn)  end,
+    ---@type fun(self:DataProvider, handler:DataProviderFilterFn) : DataProviderElement
+    ForEach = function(filterFn)  end
 }
 
 --- @class DataProviderElement

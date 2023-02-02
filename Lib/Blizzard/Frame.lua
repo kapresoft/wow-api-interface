@@ -1,14 +1,15 @@
----@class _Frame : _RegionAndScriptObject
+--- @class _Frame_
 local A = {}
+--- @alias _Frame _Frame_|_Region|_ScriptObject
 
 ---Register for notifications when an event occurs.
 ---#### See: [https://wowpedia.fandom.com/wiki/Events](https://wowpedia.fandom.com/wiki/Events)
----@param event FrameEvent
+--- @param event FrameEvent
 function A:RegisterEvent(event) end
 
 ---Register for notifications when events apply to certain units.
----@param event string name of the event, e.g. "UNIT_POWER".
----@param unit1 string unit to deliver the event for (UnitId).
+--- @param event string name of the event, e.g. "UNIT_POWER".
+--- @param unit1 string unit to deliver the event for (UnitId).
 ---#### See [UnitId](https://wowpedia.fandom.com/wiki/UnitId)
 function A:RegisterUnitEvent(event, unit1 , unit2, ...) end
 
@@ -16,26 +17,26 @@ function A:RegisterUnitEvent(event, unit1 , unit2, ...) end
 function A:RegisterAllEvents() end
 
 ---Indicate that this frame should no longer be notified when event occurs.
----@param event string name of the event, e.g. "UNIT_POWER".
+--- @param event string name of the event, e.g. "UNIT_POWER".
 function A:UnregisterEvent(event) end
 
 ---Indicate that this frame should no longer be notified when any events occur.
 function A:UnregisterAllEvents() end
 
 ---Returns true if the given event is registered to the frame.
----@param event string name of the event, e.g. "UNIT_POWER".
+--- @param event string name of the event, e.g. "UNIT_POWER".
 function A:IsEventRegistered(event) end
 
 function A:DesaturateHierarchy() end
 
 ---Disables the specified draw layer.
----@param layer string defaults to "ARTWORK"
----@see _DrawLayer
+--- @param layer string defaults to "ARTWORK"
+--- @see _DrawLayer
 function A:DisableDrawLayer(layer) end
 
 ---Enables the specified draw layer.
----@param layer string
----@see _DrawLayer
+--- @param layer string
+--- @see _DrawLayer
 function A:EnableDrawLayer(layer) end
 
 function A:GetBoundsRect() end
@@ -65,26 +66,26 @@ function A:GetFrameLevel() end
 function A:GetFrameStrata() end
 
 ---Gets the frame's hit rectangle inset distances
----@param left number
----@param right number
----@param top number
----@param bottom number
+--- @param left number
+--- @param right number
+--- @param top number
+--- @param bottom number
 function A:GetHitRectInsets(left, right, top, bottom) end
 
 ---Returns the frame's maximum allowed resize bounds
----@param w number
----@param h number
+--- @param w number
+--- @param h number
 function A:GetMaxResize(w, h) end
 
 ---Returns the frame's minimum allowed resize bounds
----@param w number
----@param h number
+--- @param w number
+--- @param h number
 function A:GetMinResize(w, h) end
 
----@return boolean
+--- @return boolean
 function A:HasFixedFrameLevel() end
 
----@return boolean
+--- @return boolean
 function A:HasFixedFrameStrata() end
 
 function A:IgnoreDepth() end
@@ -92,11 +93,11 @@ function A:IgnoreDepth() end
 ---Returns if the frame is prohibited from being dragged off screen.
 function A:IsClampedToScreen() end
 
----@return boolean
+--- @return boolean
 function A:IsIgnoringDepth() end
 
 ---Returns if the frame is set as top level.
----@return boolean
+--- @return boolean
 function A:IsToplevel() end
 
 ---Lowers this frame behind other frames.
@@ -105,9 +106,9 @@ function A:Lower() end
 ---Raises this frame above other frames.
 function A:Raise() end
 
----@param angleRadians number
----@param pivotX number
----@param pivotY number
+--- @param angleRadians number
+--- @param pivotX number
+--- @param pivotY number
 function A:RotateTextures(angleRadians , pivotX, pivotY) end
 
 ---Sets whether the frame is prohibited from being dragged off screen.
@@ -121,46 +122,46 @@ function A:SetDepth() end
 function A:SetDontSavePosition() end
 
 function A:SetDrawLayerEnabled(layer, mouseOver) end
----@param booleanValue boolean
+--- @param booleanValue boolean
 function A:SetFixedFrameLevel(booleanValue) end
----@param booleanValue boolean
+--- @param booleanValue boolean
 function A:SetFixedFrameStrata(booleanValue) end
----@param booleanValue boolean
+--- @param booleanValue boolean
 function A:SetFlattensRenderLayers(booleanValue) end
 
 
 ---Controls whether or not the frame is rendered to its own framebuffer.
----@param enabled boolean
+--- @param enabled boolean
 function A:SetFrameBuffer(enabled) end
 
 ---Positions the frame within a subdivision of its z-axis interval
----@param level number
+--- @param level number
 function A:SetFrameLevel(level) end
 
 ---Positions the frame within a z-axis interval.
----@param strata string WORLD, BACKGROUND, LOW, MEDIUM, HIGH, DIALOG, FULLSCREEN, FULLSCREEN_DIALOG, TOOLTIP
+--- @param strata string WORLD, BACKGROUND, LOW, MEDIUM, HIGH, DIALOG, FULLSCREEN, FULLSCREEN_DIALOG, TOOLTIP
 ---###Doc: [https://wowpedia.fandom.com/wiki/Frame_Strata](https://wowpedia.fandom.com/wiki/Frame_Strata)
 function A:SetFrameStrata(strata) end
 
 ---Set the inset distances for the frame's hit rectangle.
----@param left number
----@param right number
----@param top number
----@param bottom number
+--- @param left number
+--- @param right number
+--- @param top number
+--- @param bottom number
 function A:SetHitRectInsets(left, right, top, bottom) end
 
 ---Sets the maximum dimensions this frame can be resized to.
----@param minWidth number
----@param minHeight number
+--- @param minWidth number
+--- @param minHeight number
 function A:SetMaxResize(minWidth, minHeight) end
 
 ---Sets the minimum dimensions this frame can be resized to.
----@param minWidth number
----@param minHeight number
+--- @param minWidth number
+--- @param minHeight number
 function A:SetMinResize(minWidth, minHeight) end
 
 ---Sets whether the frame should raise itself when clicked
----@param isTopLevel boolean
+--- @param isTopLevel boolean
 function A:SetToplevel(isTopLevel) end
 
 ---Returns child Frames as multiple return values.
@@ -194,15 +195,15 @@ function A:CreateTexture() end
 
 
 ---Whether to receive keyboard input.
----@param enableFlag boolean
+--- @param enableFlag boolean
 function A:EnableKeyboard(enableFlag) end
 
 ---Whether to receives mouse input.
----@param enableFlag boolean
+--- @param enableFlag boolean
 function A:EnableMouse(enableFlag) end
 
 ---Whether to receive mouse wheel notifications.
----@param enableFlag boolean
+--- @param enableFlag boolean
 function A:EnableMouseWheel(enableFlag) end
 
 function A:GetHyperlinksEnabled() end
@@ -235,7 +236,7 @@ function A:IsResizable() end
 function A:IsUserPlaced() end
 
 ---Direct the frame to monitor for mouse-dragging.
----@param buttonType string LeftButton, RightButton, MiddleButton, Button4, Button5, ..., ButtonN
+--- @param buttonType string LeftButton, RightButton, MiddleButton, Button4, Button5, ..., ButtonN
 function A:RegisterForDrag(buttonType, ...) end
 
 function A:SetHyperlinksEnabled() end
@@ -243,35 +244,35 @@ function A:SetMouseClickEnabled() end
 function A:SetMouseMotionEnabled() end
 
 ---Whether the frame should be moved.
----@param isMovable boolean
+--- @param isMovable boolean
 function A:SetMovable(isMovable) end
 
 ---Whether to propagate keyboard input to other frames.
 function A:SetPropagateKeyboardInput(propagate) end
 
 ---Whether the frame should be resized.
----@param isResizable boolean
+--- @param isResizable boolean
 function A:SetResizable(isResizable) end
 
 ---Whether the frame is user-defined in the layout cache.
----@param isUserPlaced boolean
+--- @param isUserPlaced boolean
 function A:SetUserPlaced(isUserPlaced) end
 
 ---Starts moving this frame.
 function A:StartMoving() end
 
 ---Starts sizing this frame using the specified anchor point.
----@param point string TOPLEFT, CENTER, TOP, etc..
+--- @param point string TOPLEFT, CENTER, TOP, etc..
 function A:StartSizing(point) end
 
 ---Stops moving and/or sizing this frame.
 function A:StopMovingOrSizing() end
 
 
----@param enabled boolean
+--- @param enabled boolean
 function A:EnableGamePadButton(enabled) end
 
----@param enabled boolean
+--- @param enabled boolean
 function A:EnableGamePadStick(enabled) end
 
 function A:IsGamePadButtonEnabled() end
@@ -279,100 +280,36 @@ function A:IsGamePadStickEnabled() end
 
 
 ---Returns the current value of an attribute matching a given pattern.
----@param name string
----@return any
+--- @param name string
+--- @return any
 function A:GetAttribute(name) end
 
 ---Sets an attribute on the frame.
----@param name string
----@param value any
+--- @param name string
+--- @param value any
 function A:SetAttribute(name, value) end
 
 ---Sets an attribute on the frame without triggering the OnAttributeChanged script handler.
----@param name string
----@param value any
+--- @param name string
+--- @param value any
 function A:SetAttributeNoHandler(name, value) end
 
 function A:ExecuteAttribute(name, ...) end
 
----@return boolean
+--- @return boolean
 function A:CanChangeAttribute() end
 
 ---Returns the frame ID.
----@return string
+--- @return string
 function A:GetID() end
 
 ---Sets an ID on this frame.
----@param id string
+--- @param id string
 function A:SetID(id) end
 
---[[
 
-Frame:GetAttribute(prefix, name, suffix) - Returns the current value of an attribute matching a given pattern.
-Frame:SetAttribute(name, value) - Sets an attribute on the frame.
-Frame:SetAttributeNoHandler(name, value) - Sets an attribute on the frame without triggering the OnAttributeChanged script handler.
-Frame:ExecuteAttribute(name [, ...])
-
-Frame:CanChangeAttribute()
-Frame:GetID() - Returns the frame ID.
-Frame:SetID(id) - Sets an ID on this frame.
-
-]]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+--[[-----------------------------------------------------------------------------
+Verification
+-------------------------------------------------------------------------------]]
+--- @type _Frame
+local B = {}

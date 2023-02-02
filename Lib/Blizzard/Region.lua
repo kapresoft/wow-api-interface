@@ -1,49 +1,51 @@
----@class _Region : _ParentedObject
+--- @class __Region
 ---#### Doc [UIOBJECT_Region](https://wowpedia.fandom.com/wiki/UIOBJECT_Region)
 local A = {}
+--- @alias _Region __Region|_ScriptRegion
+--- @alias _SimpleRegion _Region
 
 ---Returns the script name and line where the region was created.
 function A:GetSourceLocation() end
 
 ---Parents this to another object. Parented objects will inherit their scale & visibility.
----@param parent RegionReference
+--- @param parent RegionReference
 function A:SetParent(parent) end
 
 ---True if this Region or its Parent is being dragged. - New in 3.1.0
----@return boolean
+--- @return boolean
 function A:IsDragging() end
 
 ---Checks whether the mouse is over the frame (or within specified offsets).
----@param top number
----@param bottom number
----@param left number
----@param right number
----@return boolean
+--- @param top number
+--- @param bottom number
+--- @param left number
+--- @param right number
+--- @return boolean
 function A:IsMouseOver(top, bottom, left, right) end
 
----@return boolean
+--- @return boolean
 function A:IsObjectLoaded() end
 
 ---Indicates if this object can be manipulated in certain ways by tainted code in combat or not
----@return boolean
+--- @return boolean
 function A:IsProtected() end
 
----@return boolean
+--- @return boolean
 function A:CanChangeProtectedState() end
 
 ---Returns the details of the indexth anchor point defined for this frame (point, relativeTo, relativePoint, xofs, yofs).
 function A:GetPoint(index) end
 
 ---Defines an attachment point of this region.
----@param point RegionPointString The point of this region. 'TOPLEFT', 'CENTER', etc...
----@param relativeTo RegionReference The reference
----@param relativePoint RegionPointString The point of the other region to anchor to. If omitted, defaults to 'point'.
----@param ofsx Number Offset right (negative for left). Requires ofsy to be specified.
----@param ofsy Number Offset up (negative for down). Requires ofsx to be specified.
+--- @param point RegionPointString The point of this region. 'TOPLEFT', 'CENTER', etc...
+--- @param relativeTo RegionReference The reference
+--- @param relativePoint RegionPointString The point of the other region to anchor to. If omitted, defaults to 'point'.
+--- @param ofsx Number Offset right (negative for left). Requires ofsy to be specified.
+--- @param ofsy Number Offset up (negative for down). Requires ofsx to be specified.
 function A:SetPoint(point, relativeTo, relativePoint, ofsx, ofsy) end
 
 ---Defines attachment points for this region to match edges of the specified frame.
----@param frame _Region | _ParentedObject | string
+--- @param frame _Region | _ParentedObject | string
 function A:SetAllPoints(frame) end
 
 ---Removes all previously-defined attachment points for this region.
@@ -52,16 +54,16 @@ function A:ClearAllPoints() end
 ---Returns the number of anchor points defined for this frame.
 function A:GetNumPoints() end
 
----@return boolean
+--- @return boolean
 function A:IsAnchoringRestricted() end
 
----@return string
+--- @return string
 function A:GetPointByName() end
 function A:ClearPointByName() end
 
 ---Shifts a region by adjusting all anchors.
----@param adjustX number
----@param adjustY number
+--- @param adjustX number
+--- @param adjustY number
 function A:AdjustPointsOffset(adjustX, adjustY) end
 
 ---Zeroizes the x and y offsets on all anchors.
@@ -95,23 +97,23 @@ function A:GetRect() end
 function A:GetScaledRect() end
 
 ---Indicates the region has been sufficiently defined for placement on the screen.
----@return boolean
+--- @return boolean
 function A:IsRectValid() end
 
 ---Returns the width of this object (scale dependent).
-------@param explicitSize boolean If true, will only return the explicit size of this region and ignores any implicit size inferred from anchor points or contents.
+------ @param explicitSize boolean If true, will only return the explicit size of this region and ignores any implicit size inferred from anchor points or contents.
 function A:GetWidth(explicitSize) end
 
 ---Defines the width of the object (scale dependent).
----@param width number
+--- @param width number
 function A:SetWidth(width) end
 
 ---Returns the height of this object (scale dependent).
-------@param explicitSize boolean If true, will only return the explicit size of this region and ignores any implicit size inferred from anchor points or contents.
+------ @param explicitSize boolean If true, will only return the explicit size of this region and ignores any implicit size inferred from anchor points or contents.
 function A:GetHeight(explicitSize) end
 
 ---Defines the height of the object (scale dependent).
----@param height number
+--- @param height number
 function A:SetHeight(height) end
 
 ---Returns the width and height (scale dependent).
@@ -121,26 +123,26 @@ function A:SetHeight(height) end
 --- height = region:GetHeight([explicitSize]);
 --- width, height = region:GetSize([explicitSize]);
 ---```
----@param explicitSize boolean If true, will only return the explicit size of this region and ignores any implicit size inferred from anchor points or contents.
+--- @param explicitSize boolean If true, will only return the explicit size of this region and ignores any implicit size inferred from anchor points or contents.
 function A:GetSize(explicitSize) end
 
 ---Defines the width and the height, as shorthand for SetWidth() and SetHeight()
----@param width number
----@param height number
+--- @param width number
+--- @param height number
 function A:SetSize(width, height) end
 
 ---Returns the set scale (normally relative to its parent).
 function A:GetScale() end
 
 ---Defines the scale relative to an immediate parent or standard coordinate space, depending on IsIgnoringParentScale()
----@param scale number
+--- @param scale number
 function A:SetScale(scale) end
 
 ---Returns the net scale, inclusive of all parents.
 function A:GetEffectiveScale() end
 
 ---Directs the region to scale itself manually without inheritence.
----@param booleanValue boolean
+--- @param booleanValue boolean
 function A:SetIgnoreParentScale(booleanValue) end
 
 ---Indicates the region scales itself manually without inheritence.
@@ -156,26 +158,26 @@ function A:Hide() end
 function A:SetShown() end
 
 ---Indicates the region will appear, but only while its parent appears or if it has no parent
----@return boolean
+--- @return boolean
 function A:IsShown() end
 
 ---Indicates the region and its parent (if any) are currently appearing
----@return boolean
+--- @return boolean
 function A:IsVisible() end
 
 ---Returns the object's set opacity between 0 and 1 (normally relative to its parent)
 function A:GetAlpha() end
 
 ---Defines the object's opacity between 0 and 1 (normally relative to its parent)
----@param alpha number between 0.0 and 1.0
+--- @param alpha number between 0.0 and 1.0
 function A:SetAlpha(alpha) end
 
 ---Directs the region to adopt a manually defined opacity uninherited from its parent
----@param booleanValue boolean
+--- @param booleanValue boolean
 function A:SetIgnoreParentAlpha(booleanValue) end
 
 ---Indicates the region has a manually defined opacity uninherited from its parent
----@return boolean
+--- @return boolean
 function A:IsIgnoringParentAlpha() end
 
 --Constructs a new AnimationGroup as a child of this Region. - New in 3.1.0
@@ -187,42 +189,11 @@ function A:GetAnimationGroups() end
 --Halts any active Animations on the Region and its children - New in 3.1.0
 function A:StopAnimating() end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+--[[-----------------------------------------------------------------------------
+Verification
+-------------------------------------------------------------------------------]]
+--- @type _Region
+local B = {}
+--- @type _SimpleRegion
+local C = {}
 
