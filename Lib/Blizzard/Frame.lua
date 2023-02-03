@@ -1,3 +1,17 @@
+--[[-----------------------------------------------------------------------------
+Frame Globals
+-------------------------------------------------------------------------------]]
+--- Creates a Frame object.
+--- @param frameType FrameType Type of the frame; e.g. "Frame" or "Button"
+--- @param name string Optional
+--- @param parent _Frame Optional
+--- @param template string Optional Comma delimited template names, i.e. "FrameTemplate, SecureButton"
+--- @param id number Optional
+function CreateFrame(frameType , name, parent, template, id) end
+
+--[[-----------------------------------------------------------------------------
+Frame
+-------------------------------------------------------------------------------]]
 --- @class _Frame_
 local A = {}
 --- @alias _Frame _Frame_|_Region|_ScriptObject
