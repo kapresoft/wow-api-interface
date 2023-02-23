@@ -13,6 +13,7 @@
 --- @alias FrameEvent string | "'PLAYER_LOG_IN'" | "'PLAYER_LOG_OUT'" | "'PLAYER_STARTED_MOVING'" | "'PLAYER_STOPPED_MOVING'" | "'etc...'"
 --- @alias DataProviderFilterFn fun(elem:DataProviderElement) | "function(elem) return true end"
 --- @alias HandlerFn fun(arg:any) | "function(arg) end"
+--- @alias HandlerFnNoARg fun() | "function() end"
 --- @alias FontName string | "'GameFontNormal'" | "'GameFontNormalMed1'" | "'GameFontNormalOutline'" | "'QuestFontNormalHuge'" | "'GameFontHighlight'" | "'GameTooltipTextSmall'" | "'NumberFontNormalSmall'"
 --- @alias CompanionType string | "'MOUNT'" | "'CRITTER'"
 --- @alias CharacterFrameName string | "'PaperDollFrame'" | "'SkillFrame'" | "'PVPFrame'" | "'ReputationFrame'" | "'TokenFrame'"
