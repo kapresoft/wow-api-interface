@@ -14,3 +14,4 @@
 --- @alias DataProviderFilterFn fun(elem:DataProviderElement) | "function(elem) return true end"
 --- @alias HandlerFn fun(arg:any) | "function(arg) end"
 --- @alias FontName string | "'GameFontNormal'" | "'GameFontNormalMed1'" | "'GameFontNormalOutline'" | "'QuestFontNormalHuge'" | "'GameFontHighlight'" | "'GameTooltipTextSmall'" | "'NumberFontNormalSmall'"
+--- @alias CompanionType string | "'MOUNT'" | "'CRITTER'"
