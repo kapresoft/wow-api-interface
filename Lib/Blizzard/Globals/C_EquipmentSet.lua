@@ -27,6 +27,12 @@ local A = {
     --- ### Equips items from a specified equipment set (NO COMBAT)
     --- @type fun(equipmentSetId:number) : boolean -- returns true if the set was equipped, nil otherwise. Failure conditions include invalid arguments, and engaging in combat.
     UseEquipmentSet = {},
+
+    --- ### Picks up an equipment set, placing it on the cursor.
+    --- #### See: [https://wowpedia.fandom.com/wiki/API_C_EquipmentSet.PickupEquipmentSet](https://wowpedia.fandom.com/wiki/API_C_EquipmentSet.PickupEquipmentSet)
+    --- @param equipmentSetID number The equipment set index number
+    --- @type fun(equipmentSetID:number)
+    PickupEquipmentSet = {},
 }
 
 --- @class EquipmentSetCursor
