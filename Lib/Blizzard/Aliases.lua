@@ -17,4 +17,9 @@
 --- @alias FontName string | "'GameFontNormal'" | "'GameFontNormalMed1'" | "'GameFontNormalOutline'" | "'QuestFontNormalHuge'" | "'GameFontHighlight'" | "'GameTooltipTextSmall'" | "'NumberFontNormalSmall'"
 --- @alias CompanionType string | "'MOUNT'" | "'CRITTER'"
 --- @alias CharacterFrameName string | "'PaperDollFrame'" | "'SkillFrame'" | "'PVPFrame'" | "'ReputationFrame'" | "'TokenFrame'"
---- @alias UnitId string | "'player'" | "'target'" | "'focus'" | "'mouseover'" | "'none'" | "'pet'" | "'vehicle'"
+--- @alias UnitID string | "'player'" | "'target'" | "'focus'" | "'mouseover'" | "'none'" | "'pet'" | "'vehicle'"
+--- @alias MacroNameOrSlot string|number
+--- @alias MacroName string
+--- @alias MacroBody string
+--- @alias Icon number
+--- @alias SpellID number
