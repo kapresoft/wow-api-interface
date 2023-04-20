@@ -1,6 +1,8 @@
 --- @alias ItemIDLinkOrName number|string
+--- @alias itemID number The itemID
 --- @alias itemName string The localized name of the item.
 --- @alias itemLink string The localized link of the item.
+--- @alias strippedItemLink string The stripped item link
 --- @alias itemQuality number The Enum.ItemQuality number value
 --- @alias itemLevel number The base item level, not including upgrades. See GetDetailedItemLevelInfo() for getting the actual item level.
 --- @alias itemMinLevel number The minimum level required to use the item, or 0 if there is no level requirement.
