@@ -4,7 +4,7 @@
 --- @alias DrawLayer string | "'BACKGROUND'" | "'BORDER'" | "'ARTWORK'" | "'OVERLAY'"  | "'HIGHLIGHT'"
 --- @alias SubDrawLayer number | "-8"| "-7"| "-6"| "-5" | "-4"| "-3"| "-2"| "-1" | "0"| "1"| "2"| "3" | "4"| "5"| "6" | "7"
 --- @alias NonNegativeNumber number | "0" | "1" | "2"
---- @alias Color number | "0.0" | "1.0"
+--- @alias RGBColor number | "0.0" | "1.0"
 --- @alias Alpha number | "0.0" | "1.0"
 --- @alias RegionReference _Region | _ParentedObject | string | "'UIParent'" | "'FrameNameOrObj'"
 --- @alias Number number | "0"

@@ -39,9 +39,9 @@ function A:SetIndentedWordWrap(wordWrap) end
 function A:SetJustifyH(justifyH) end
 --- @param justifyV string
 function A:SetJustifyV(justifyV) end
---- @param colorR Color
---- @param colorG Color
---- @param colorB Color
+--- @param colorR RGBColor
+--- @param colorG RGBColor
+--- @param colorB RGBColor
 --- @param alpha Alpha
 function A:SetShadowColor(colorR, colorG, colorB, alpha) end
 --- @param offsetX NonNegativeNumber
@@ -49,9 +49,9 @@ function A:SetShadowColor(colorR, colorG, colorB, alpha) end
 function A:SetShadowOffset(offsetX, offsetY) end
 --- @param spacing NonNegativeNumber
 function A:SetSpacing(spacing) end
---- @param colorR Color
---- @param colorG Color
---- @param colorB Color
+--- @param colorR RGBColor
+--- @param colorG RGBColor
+--- @param colorB RGBColor
 --- @param alpha Alpha
 function A:SetTextColor(colorR, colorG, colorB, alpha) end
 

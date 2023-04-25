@@ -12,8 +12,8 @@ function A:GetDrawLayer() end
 function A:SetDrawLayer(layer , subLevel) end
 
 --- Sets a color shading for the region's graphics.
---- @param r Color
---- @param g Color 0.0 to 1.0 Green
---- @param b Color 0.0 to 1.0 Blue
+--- @param r RGBColor
+--- @param g RGBColor 0.0 to 1.0 Green
+--- @param b RGBColor 0.0 to 1.0 Blue
 --- @param a Alpha 0.0 to 1.0 Alpha (Optional)
 function A:SetVertexColor(r, g, b , a) end

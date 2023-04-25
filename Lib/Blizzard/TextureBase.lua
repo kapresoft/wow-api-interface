@@ -20,9 +20,9 @@ function A:IsSnappingToPixelGrid() end
 function A:SetAtlas(atlas, useAtlasSize, filterMode, resetTexCoords) end
 function A:SetBlendMode(blendMode) end
 function A:SetBlockingLoadsRequested(blocking) end
---- @param colorR Color
---- @param colorG Color
---- @param colorB Color
+--- @param colorR RGBColor
+--- @param colorG RGBColor
+--- @param colorB RGBColor
 --- @param alpha Alpha
 function A:SetColorTexture(colorR, colorG, colorB, alphaMode) end
 function A:SetDesaturated(desaturated) end
