@@ -6,7 +6,7 @@
 --- @param index number
 local function ExtractColorValueFromHex(str, index) end
 
---- @param hexColor string
+--- @param hexColor HexColor The hexadecimal digits in this format: AARRGGBB
 --- @return Color
 function CreateColorFromHexString(hexColor) end
 
