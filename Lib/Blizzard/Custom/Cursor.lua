@@ -3,5 +3,7 @@ local CursorInfo = {
     type = '',
     info1 = '',
     info2 = '',
-    info3 = ''
+    info3 = '',
+    --- Custom Type
+    subType = '',
 }
