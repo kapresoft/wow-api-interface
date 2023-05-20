@@ -24,3 +24,6 @@
 --- @alias MacroBody string
 --- @alias Icon number
 --- @alias SpellID number
+--- @alias groupType string |'party'|'raid'
+--- @alias instanceType string | "'party'" | "'raid'" | "'arena'" | "'pvp'" | "'none'"
+--- @alias instanceDifficultyName string | "'Normal'" | "'Heroic'" | "'10 Player'" | "'25 Player (Heroic)'"
