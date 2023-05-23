@@ -8,6 +8,6 @@ BlizzardInterfaceCode/Interface/SharedXML/LinkUtil.lua
 --- link = select(2, GetItemInfo(itemName))
 --- itemID, strippedItemLink = GetItemInfoFromHyperlink(link)
 --- ```
---- @param link itemLink
---- @return itemID, strippedItemLink
+--- @param link ItemLink
+--- @return ItemID, StrippedItemLink
 function GetItemInfoFromHyperlink(link) end
