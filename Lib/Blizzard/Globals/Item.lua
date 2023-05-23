@@ -1,4 +1,3 @@
---- @alias ItemIDLinkOrName number|string
 --- @alias itemID number The itemID
 --- @alias itemName string The localized name of the item.
 --- @alias itemLink string The localized link of the item.
@@ -41,7 +40,19 @@ Global Functions
 --- - [FileID](https://wowpedia.fandom.com/wiki/FileID)
 --- - [LE_ITEM_BIND](https://wowpedia.fandom.com/wiki/LE_ITEM_BIND)
 --- - [LE_EXPANSION](https://wowpedia.fandom.com/wiki/LE_EXPANSION)
---- @param item ItemIDLinkOrName The itemID(number), link(string), or name(string)
+--- @param item ItemID_Link_Or_Name The itemID(number), link(string), or name(string)
 --- @return itemName, itemLink, itemQuality, itemLevel, itemMinLevel, itemType, itemSubType, itemStackCount, itemEquipLoc, itemTexture, sellPrice, classID, subclassID, bindType, expacID, setID, isCraftingReagent
 function GetItemInfo(item) end
 
+--- ### See: [API_GetItemInfoInstant](https://wowpedia.fandom.com/wiki/API_GetItemInfoInstant)
+--- @param item ItemID_Link_Or_Name
+--- @return itemID, itemType, itemSubType, itemEquipLoc, Icon, classID, subclassID
+function GetItemInfoInstant(item) end
+
+--- ### Usages:
+--- ```
+--- usable, noMana = IsUsableItem('Cookie')
+--- ```
+--- @param item ItemID_Link_Or_Name
+--- @return Usable, CannotBeCastedDueToLowMana
+function IsUsableItem(item) end

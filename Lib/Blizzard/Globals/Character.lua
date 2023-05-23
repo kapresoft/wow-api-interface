@@ -1,5 +1,5 @@
 --- ### Toggles the character pane to the specified frame.
---- #### See: [https://wowpedia.fandom.com/wiki/API_ToggleCharacter](https://wowpedia.fandom.com/wiki/API_ToggleCharacter)
+--- #### See: [API_ToggleCharacter](https://wowpedia.fandom.com/wiki/API_ToggleCharacter)
 --- ```
 --- ToggleCharacter('PaperDollFrame')
 --- ```
@@ -7,3 +7,7 @@
 --- @type fun(frameName:CharacterFrameName)
 ToggleCharacter = {}
 
+--- #### See: [API_IsStealthed](https://wowpedia.fandom.com/wiki/API_IsStealthed)
+--- True if the character is currently stealthed.
+--- @return boolean
+function IsStealthed() end

@@ -25,5 +25,12 @@
 --- @alias Icon number
 --- @alias SpellID number
 --- @alias groupType string |'party'|'raid'
---- @alias instanceType string | "'party'" | "'raid'" | "'arena'" | "'pvp'" | "'none'"
---- @alias instanceDifficultyName string | "'Normal'" | "'Heroic'" | "'10 Player'" | "'25 Player (Heroic)'"
+--- @alias InstanceType string | "'party'" | "'raid'" | "'arena'" | "'pvp'" | "'none'"
+--- @alias InstanceDifficultyName string | "'Normal'" | "'Heroic'" | "'10 Player'" | "'25 Player (Heroic)'"
+--- @alias ItemName string | "'Conjured Mana Biscuit'"
+--- @alias ItemLink string | "'|cffxxxxxx|Hitem:payload|h[text]|h|r'" | "'|cff0070dd|Hitem:80921:4721:::::::36:103::1:::::::|h[Saboteur's Stabilizing Bracers]|h|r'"
+--- @alias ItemID_Link_Or_Name number|string
+--- @alias SpellID_Name_Or_Index number|string
+--- @alias CannotBeCastedDueToLowMana boolean
+--- @alias Usable boolean
+--- @alias BookType string | "BOOKTYPE_SPELL" | "BOOKTYPE_PET" | "'spell'" | "'pet'"

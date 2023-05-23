@@ -2,10 +2,10 @@
 --- @class InstanceInfo
 local InstanceInfo = {
     name = 'The Nexus',
-    --- @type instanceType
+    --- @type InstanceType
     instanceType = '',
     difficultyID = 2,
-    --- @type instanceDifficultyName
+    --- @type InstanceDifficultyName
     difficultyName = 'Heroic',
     maxPlayers = 5,
     dynamicDifficulty = 1,

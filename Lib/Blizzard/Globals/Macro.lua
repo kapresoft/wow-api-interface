@@ -15,3 +15,11 @@ function GetMacroInfo(macroNameOrSlotNumber) end
 --- @param macroNameOrSlot MacroNameOrSlot
 --- @return SpellID The Spell ID
 function GetMacroSpell(macroNameOrSlot) end
+
+--- ### Example
+--- ```
+--- itemName, itemLink = GetMacroItem('Eat#Drink')
+--- ```
+--- @param macroNameOrSlot MacroNameOrSlot
+--- @return ItemName, ItemLink
+function GetMacroItem(macroNameOrSlot)  end
