@@ -12,6 +12,14 @@
 --- @param filter UnitAuraFilter Optional
 function UnitAura(unit, index, filter) end
 
+--- #### Example:
+--- ```
+--- className, classFilename, classId = UnitClass('player')
+--- ```
+--- @param unit UnitID
+--- @return UnitClassLocalizedName, UnitClass, UnitClassID
+function UnitClass(unit) end
+
 --- @see Blizzard_UnitId
 --- @param unit UnitID
 --- @param otherUnit UnitID

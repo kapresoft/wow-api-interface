@@ -2,6 +2,8 @@
 Common
 -------------------------------------------------------------------------------]]
 --- @alias Index number
+--- @alias SpecializationIndex number | "1" | "2" | "3"
+--- @alias SpecializationIndexOptional number | "nil" | "1" | "2" | "3"
 --- @alias FrameType string | "'Frame'" | "'Button'" | "'CheckButton'" | "'Cooldown'" | "'Editbox'" | "'GameTooltip'" | "'ScrollFrame'" | "'Slider'" | "'MessageFrame'"
 --- @alias ObjectType string | "'Frame'" | "'Button'" | "'FontString'"
 --- @alias RegionPointString string | "'TOPLEFT'" | "'TOPRIGHT'" | "'BOTTOMLEFT'" | "'BOTTOMRIGHT'" | "'TOP'" | "'BOTTOM'" | "'LEFT'" | "'RIGHT'" | "'CENTER'"
@@ -26,6 +28,8 @@ Common
 --- @alias InstanceDifficultyName string | "'Normal'" | "'Heroic'" | "'10 Player'" | "'25 Player (Heroic)'"
 --- @alias IsCraftingReagent boolean Whether the item can be used as a crafting reagent.
 --- @alias CannotBeCastedDueToLowMana boolean
+--- @alias Boolean boolean | "true" | "false"
+--- @alias BooleanOptional boolean | "nil" | "true" | "false"
 --- @alias Usable boolean
 --- @alias Enabled boolean
 --- @alias Include boolean
@@ -43,8 +47,7 @@ Unit
 --- @alias CharacterFrameName string | "'PaperDollFrame'" | "'SkillFrame'" | "'PVPFrame'" | "'ReputationFrame'" | "'TokenFrame'"
 --- @alias UnitID string | "'player'" | "'target'" | "'focus'" | "'mouseover'" | "'none'" | "'pet'" | "'vehicle'"
 --- @alias UnitAuraFilter string | "'HELPFUL'" | "'HARMFUL'"
---- UnitClass is the "english class" value in UnitClass() function
---- #### See: https://wowpedia.fandom.com/wiki/API_UnitClass
+--- @alias UnitClassLocalizedName string | "'warrior'" | "'paladin'"
 --- @alias UnitClass string | "'WARRIOR'" | "'PALADIN'" | "'HUNTER'" | "'ROGUE'" | "'PRIEST'" | "'DEATHKNIGHT'" | "'SHAMAN'" | "'MAGE'" | "'WARLOCK'" | "'MONK'" | "'DRUID'" | "'DEMONHUNTER'" | "'EVOKER'"
 --- @alias UnitClassID number | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12" | "13"
 
