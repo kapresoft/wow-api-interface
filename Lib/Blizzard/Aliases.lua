@@ -43,6 +43,8 @@ Unit
 --- @alias CharacterFrameName string | "'PaperDollFrame'" | "'SkillFrame'" | "'PVPFrame'" | "'ReputationFrame'" | "'TokenFrame'"
 --- @alias UnitID string | "'player'" | "'target'" | "'focus'" | "'mouseover'" | "'none'" | "'pet'" | "'vehicle'"
 --- @alias UnitAuraFilter string | "'HELPFUL'" | "'HARMFUL'"
+--- UnitClass is the "english class" value in UnitClass() function
+--- @alias UnitClass | "'WARRIOR'" | "'PALADIN'" | "'HUNTER'" | "'ROGUE'" | "'PRIEST'" | "'DEATHKNIGHT'" | "'SHAMAN'" | "'MAGE'" | "'WARLOCK'" | "'MONK'" | "'DRUID'" | "'DEMONHUNTER'" | "'EVOKER'"
 
 --[[-----------------------------------------------------------------------------
 Spell
