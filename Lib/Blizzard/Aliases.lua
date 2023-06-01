@@ -1,6 +1,7 @@
 --[[-----------------------------------------------------------------------------
 Common
 -------------------------------------------------------------------------------]]
+--- @alias Index number
 --- @alias FrameType string | "'Frame'" | "'Button'" | "'CheckButton'" | "'Cooldown'" | "'Editbox'" | "'GameTooltip'" | "'ScrollFrame'" | "'Slider'" | "'MessageFrame'"
 --- @alias ObjectType string | "'Frame'" | "'Button'" | "'FontString'"
 --- @alias RegionPointString string | "'TOPLEFT'" | "'TOPRIGHT'" | "'BOTTOMLEFT'" | "'BOTTOMRIGHT'" | "'TOP'" | "'BOTTOM'" | "'LEFT'" | "'RIGHT'" | "'CENTER'"
@@ -41,6 +42,7 @@ Unit
 --- @alias CompanionType string | "'MOUNT'" | "'CRITTER'"
 --- @alias CharacterFrameName string | "'PaperDollFrame'" | "'SkillFrame'" | "'PVPFrame'" | "'ReputationFrame'" | "'TokenFrame'"
 --- @alias UnitID string | "'player'" | "'target'" | "'focus'" | "'mouseover'" | "'none'" | "'pet'" | "'vehicle'"
+--- @alias UnitAuraFilter string | "'HELPFUL'" | "'HARMFUL'"
 
 --[[-----------------------------------------------------------------------------
 Spell
@@ -78,5 +80,3 @@ Macro
 --- @alias MacroNameOrSlot string|number
 --- @alias MacroName string
 --- @alias MacroBody string
-
-

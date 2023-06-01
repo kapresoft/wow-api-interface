@@ -1,3 +1,17 @@
+--- #### See: [API_UnitAura#ForEachAura](https://wowpedia.fandom.com/wiki/API_UnitAura#ForEachAura)
+--- #### Example
+--- ```
+--- name, icon, count, dispelType, duration, expirationTime, source, isStealable, nameplateShowPersonal,
+--- spellId, canApplyAura, isBossDebuff, castByPlayer, nameplateShowAll, timeMod, ...
+---     = UnitAura  (unit, index, 'HELPFUL')
+---     = UnitBuff  (unit, index, 'HARMFUL')
+---     = UnitDebuff(unit, index [, filter])
+--- ```
+--- @param unit UnitID
+--- @param index Index
+--- @param filter UnitAuraFilter Optional
+function UnitAura(unit, index, filter) end
+
 --- @see Blizzard_UnitId
 --- @param unit UnitID
 --- @param otherUnit UnitID
