@@ -25,7 +25,6 @@ local SpellInfo = {
 --[[-----------------------------------------------------------------------------
 Support Functions
 -------------------------------------------------------------------------------]]
-
 --- #### See: [API_IsUsableSpell](https://wowpedia.fandom.com/wiki/API_IsUsableSpell)
 --- ### Usages:
 --- ```
@@ -34,7 +33,28 @@ Support Functions
 --- usable, noMana = IsUsableSpell(123, BOOKTYPE_SPELL)
 --- ```
 --- @param spell SpellID_Name_Or_Index
+--- @param bookType BookTypeOptional
 --- @return Usable, CannotBeCastedDueToLowMana
---- @param bookType BookType
 function IsUsableSpell(spell, bookType) end
 
+--- #### See: [API_GetSpellCharges](https://wowpedia.fandom.com/wiki/API_GetSpellCharges)
+--- ```
+--- currentCharges, maxCharges, cooldownStart, cooldownDuration, chargeModRate
+---   = GetSpellCharges('Flurry')
+---   = GetSpellCharges(index, BOOKTYPE_SPELL)
+--- ```
+--- @param spell SpellID_Name_Or_Index
+--- @param bookType BookTypeOptional
+--- @return CurrentCharges, MaxCharges, CooldownStart, CooldownDuration, ChargeModRate
+function GetSpellCharges(spell, bookType) end
+
+--- #### See: [API_GetSpellInfo](https://wowpedia.fandom.com/wiki/API_GetSpellInfo)
+--- ```
+--- name, rank, icon, castTime, minRange, maxRange, spellID, originalIcon
+---   = GetSpellInfo(spell)
+---   = GetSpellInfo(index, bookType)
+--- ```
+--- @param spell SpellID_Name_Or_Index
+--- @param bookType BookTypeOptional
+--- @return SpellName, nil, Icon, CastTime, MinRange, MaxRange, SpellID, OriginalIcon
+function GetSpellInfo(spell, bookType) end

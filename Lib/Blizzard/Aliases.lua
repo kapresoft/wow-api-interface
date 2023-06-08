@@ -3,7 +3,7 @@ Common
 -------------------------------------------------------------------------------]]
 --- @alias Index number
 --- @alias SpecializationIndex number | "1" | "2" | "3"
---- @alias SpecializationIndexOptional number | "nil" | "1" | "2" | "3"
+--- @alias SpecializationIndexOptional SpecializationIndex | "nil" | "1" | "2" | "3"
 --- @alias FrameType string | "'Frame'" | "'Button'" | "'CheckButton'" | "'Cooldown'" | "'Editbox'" | "'GameTooltip'" | "'ScrollFrame'" | "'Slider'" | "'MessageFrame'"
 --- @alias ObjectType string | "'Frame'" | "'Button'" | "'FontString'"
 --- @alias RegionPointString string | "'TOPLEFT'" | "'TOPRIGHT'" | "'BOTTOMLEFT'" | "'BOTTOMRIGHT'" | "'TOP'" | "'BOTTOM'" | "'LEFT'" | "'RIGHT'" | "'CENTER'"
@@ -22,19 +22,21 @@ Common
 --- @alias HandlerFn fun(arg:any) | "function(arg) end"
 --- @alias HandlerFnNoARg fun() | "function() end"
 --- @alias FontName string | "'GameFontNormal'" | "'GameFontNormalMed1'" | "'GameFontNormalOutline'" | "'QuestFontNormalHuge'" | "'GameFontHighlight'" | "'GameTooltipTextSmall'" | "'NumberFontNormalSmall'"
---- @alias Icon number
+--- @alias Icon number The spell icon texture
+--- @alias OriginalIcon Icon The original icon texture for this spell
 --- @alias groupType string |'party'|'raid'
 --- @alias InstanceType string | "'party'" | "'raid'" | "'arena'" | "'pvp'" | "'none'"
 --- @alias InstanceDifficultyName string | "'Normal'" | "'Heroic'" | "'10 Player'" | "'25 Player (Heroic)'"
 --- @alias IsCraftingReagent boolean Whether the item can be used as a crafting reagent.
 --- @alias CannotBeCastedDueToLowMana boolean
 --- @alias Boolean boolean | "true" | "false"
---- @alias BooleanOptional boolean | "nil" | "true" | "false"
+--- @alias BooleanOptional Boolean | "nil" | "true" | "false"
 --- @alias Usable boolean
 --- @alias Enabled boolean
 --- @alias Include boolean
 --- @alias OptionalFlag boolean
 --- @alias BookType string | "BOOKTYPE_SPELL" | "BOOKTYPE_PET" | "'spell'" | "'pet'"
+--- @alias BookTypeOptional BookType
 --- @alias CooldownType string | "'spell'" | "'item'" | "'macro'"
 --- @alias StartTime number | "0.0"
 --- @alias Duration number | "1.0"
@@ -58,6 +60,16 @@ Spell
 --- @alias SpellID number
 --- @alias SpellName string
 --- @alias SpellLink string
+--- @alias Time number
+--- @alias Range number
+--- @alias CastTime Time Cast time in milliseconds, or 0 for instant spells.
+--- @alias CurrentCharges number The number of charges of the ability currently available.
+--- @alias MaxCharges number The maximum number of charges the ability may have available.
+--- @alias CooldownStart Time Time (per GetTime) at which the last charge cooldown began, or 2^32 / 1000 - cooldownDuration if the spell is not currently recharging.
+--- @alias CooldownDuration number Time (in seconds) required to gain a charge.
+--- @alias ChargeModRate number The rate at which the charge cooldown widget's animation should be updated.
+--- @alias MinRange Range Minimum range of the spell, or 0 if not applicable.
+--- @alias MaxRange Range Maximum range of the spell, or 0 if not applicable.
 
 --[[-----------------------------------------------------------------------------
 Item
