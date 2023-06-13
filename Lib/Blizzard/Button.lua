@@ -14,12 +14,14 @@ function A:Disable() end
 
 
 ---Return the current state ("PUSHED","NORMAL") of the Button.
+---@return string
 function A:GetButtonState() end
 
 ---Return the font object for the Button when disabled - New in 1.10.
 function A:GetDisabledFontObject() end
 
 ---Get the texture for this button when disabled - New in 1.11.
+---@return _Texture
 function A:GetDisabledTexture() end
 
 ---Get this button's label FontString - New in 1.11.
@@ -29,6 +31,7 @@ function A:GetFontString() end
 function A:GetHighlightFontObject() end
 
 ---Get the texture for this button when highlighted.
+---@return _Texture
 function A:GetHighlightTexture() end
 
 ---Get whether the button is allowed to run its OnEnter and OnLeave scripts even while disabled - New in 3.3.
@@ -38,12 +41,14 @@ function A:GetMotionScriptsWhileDisabled() end
 function A:GetNormalFontObject() end
 
 ---Get the normal texture for this button - New in 1.11.
+---@return _Texture
 function A:GetNormalTexture() end
 
 ---Get the text offset when this button is pushed (x, y) - New in 1.11.
 function A:GetPushedTextOffset() end
 
 ---Get the texture for this button when pushed - New in 1.11.
+---@return _Texture
 function A:GetPushedTexture() end
 
 ---Get the text label for the Button.
@@ -53,9 +58,11 @@ function A:GetText() end
 function A:GetTextHeight() end
 
 ---Get the width of the Button's text.
+---@return number
 function A:GetTextWidth() end
 
 ---Determine whether the Button is enabled.
+---@return Enabled
 function A:IsEnabled() end
 
 ---Set the Button to always be drawn highlighted.

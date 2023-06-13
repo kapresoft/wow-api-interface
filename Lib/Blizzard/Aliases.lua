@@ -99,3 +99,10 @@ Macro
 --- @alias MacroNameOrSlot string|number
 --- @alias MacroName string
 --- @alias MacroBody string
+
+--[[-----------------------------------------------------------------------------
+Script Handlers
+• https://wowpedia.fandom.com/wiki/UIHANDLER_OnClick
+-------------------------------------------------------------------------------]]
+--- @alias ButtonName string | "'LeftButton'" | "'RightButton'" | "'MiddleButton'" | "'Button4'" | "'Button5'" | "'ButtonN'"
+--- @alias ButtonDown Boolean True when the button is pressed, false when it is released

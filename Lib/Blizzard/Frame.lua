@@ -250,8 +250,8 @@ function A:IsResizable() end
 function A:IsUserPlaced() end
 
 ---Direct the frame to monitor for mouse-dragging.
---- @param buttonType string LeftButton, RightButton, MiddleButton, Button4, Button5, ..., ButtonN
-function A:RegisterForDrag(buttonType, ...) end
+--- @param buttonName ButtonName
+function A:RegisterForDrag(buttonName, ...) end
 
 function A:SetHyperlinksEnabled() end
 function A:SetMouseClickEnabled() end
