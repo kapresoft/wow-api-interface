@@ -1,5 +1,5 @@
---- @class __Button
 --- #### See: [https://wowpedia.fandom.com/wiki/UIOBJECT_Button](https://wowpedia.fandom.com/wiki/UIOBJECT_Button)
+--- @class __Button
 local A = {}
 --- @alias _Button __Button | _Frame
 
