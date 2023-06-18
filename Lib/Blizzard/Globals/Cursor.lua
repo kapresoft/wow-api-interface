@@ -68,3 +68,6 @@ PickupCompanion = {}
 --- ```
 --- @return ActionType, Info2, Info3, Info4
 function GetCursorInfo() end
+
+--- Clears any objects from the cursor.
+function ClearCursor() end
