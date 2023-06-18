@@ -58,3 +58,9 @@ function GetSpellCharges(spell, bookType) end
 --- @param bookType BookTypeOptional
 --- @return SpellName, nil, Icon, CastTime, MinRange, MaxRange, SpellID, OriginalIcon
 function GetSpellInfo(spell, bookType) end
+
+--- #### See: [API_IsPassiveSpell](https://wowpedia.fandom.com/wiki/API_IsPassiveSpell)
+--- @param spell SpellID_Name_Or_Index
+--- @param bookType BookTypeOptional
+--- @return Boolean
+function IsPassiveSpell(spell, bookType) end
