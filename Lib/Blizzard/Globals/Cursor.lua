@@ -66,7 +66,7 @@ PickupCompanion = {}
 ---  'battlepet', petGUID = GetCursorInfo()
 ---   • petGUID : string - GUID of a battle pet in your collection.
 --- ```
---- @return ActionType, Info2, Info3, Info4
+--- @return ActionTypeName, Info2, Info3, Info4
 function GetCursorInfo() end
 
 --- Clears any objects from the cursor.
