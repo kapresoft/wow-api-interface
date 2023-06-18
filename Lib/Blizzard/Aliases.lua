@@ -41,7 +41,11 @@ Common
 --- @alias StartTime number | "0.0"
 --- @alias Duration number | "1.0"
 --- @alias Enable number | "0" | "1"
-
+--[[-----------------------------------------------------------------------------
+Frame
+-------------------------------------------------------------------------------]]
+--- @alias FrameStrata string | "'WORLD'" | "'BACKGROUND'" | "'LOW'" | "'MEDIUM'" | "'HIGH'" | "'DIALOG'" | "'FULLSCREEN'" | "'FULLSCREEN_DIALOG'" | "'TOOLTIP'"
+--- @alias FrameLevel number | "1" | "10" | "100" | "200"
 --[[-----------------------------------------------------------------------------
 Unit
 -------------------------------------------------------------------------------]]
@@ -106,3 +110,11 @@ Script Handlers
 -------------------------------------------------------------------------------]]
 --- @alias ButtonName string | "'LeftButton'" | "'RightButton'" | "'MiddleButton'" | "'Button4'" | "'Button5'" | "'ButtonN'"
 --- @alias ButtonDown Boolean True when the button is pressed, false when it is released
+
+--[[-----------------------------------------------------------------------------
+CursorInfo
+-------------------------------------------------------------------------------]]
+--- @alias Info1 string
+--- @alias Info2 string
+--- @alias Info3 string
+--- @alias Info4 string

@@ -76,7 +76,7 @@ function A:GetFlattensRenderLayers() end
 ---Returns the level of this frame.
 function A:GetFrameLevel() end
 
----Returns the strata of this frame.
+--- @return FrameStrata
 function A:GetFrameStrata() end
 
 ---Gets the frame's hit rectangle inset distances
