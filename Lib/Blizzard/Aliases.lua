@@ -41,6 +41,7 @@ Common
 --- @alias StartTime number | "0.0"
 --- @alias Duration number | "1.0"
 --- @alias Enable number | "0" | "1"
+--- @alias ActionType string | "'spell'" | "'item'" | "'macro'" | "'macrotext'" | "'petaction'" | "'money'" | "'mount'" | "'merchant'" | "'battlepet'"
 --[[-----------------------------------------------------------------------------
 Frame
 -------------------------------------------------------------------------------]]
