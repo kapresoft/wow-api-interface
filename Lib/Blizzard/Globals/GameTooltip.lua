@@ -1,7 +1,7 @@
 --- @class __GameTooltip
 local A = {}
---- @alias _GamedTooltip __GameTooltip | _Frame
---- @type _GamedTooltip
+--- @alias _GameTooltip __GameTooltip | _Frame
+--- @type _GameTooltip
 GameTooltip = A
 
 function A:AddAtlas(atlas, minx, maxx, miny, maxy) end

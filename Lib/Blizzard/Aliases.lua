@@ -115,6 +115,7 @@ Script Handlers
 --[[-----------------------------------------------------------------------------
 CursorInfo
 -------------------------------------------------------------------------------]]
+--- @alias CursorSubType string | "'M6'"
 --- @alias Info1 string
 --- @alias Info2 string
 --- @alias Info3 string

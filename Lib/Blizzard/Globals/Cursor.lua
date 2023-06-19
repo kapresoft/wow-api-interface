@@ -50,7 +50,7 @@ PickupCompanion = {}
 ---  'macro', macroIndex = GetCursorInfo()
 ---   • index : number - The index of the macro on the cursor.
 ---
----  # Pet Cursore
+---  # Pet Cursor
 ---  'petaction', spellID, spellIndex, retVal3 = GetCursorInfo()
 ---    • spellID: Spell ID of the pet action on the cursor, or unknown 0-4 number if the spell is a shared pet control spell (Follow, Stay, Assist, Defensive, etc...)..
 ---    • spellIndex: number - The index of the spell in the pet spell book, or nil if the spell is a shared pet control spell (Follow, Stay, Assist, Defensive, etc...).
