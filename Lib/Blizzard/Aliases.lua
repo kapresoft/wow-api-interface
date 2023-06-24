@@ -1,6 +1,7 @@
 --[[-----------------------------------------------------------------------------
 Common
 -------------------------------------------------------------------------------]]
+--- @alias OptionalTable table
 --- @alias Index number
 --- @alias SpecializationIndex number | "1" | "2" | "3"
 --- @alias SpecializationIndexOptional SpecializationIndex | "nil" | "1" | "2" | "3"
@@ -20,7 +21,7 @@ Common
 --- @alias FrameEvent string | "'PLAYER_LOG_IN'" | "'PLAYER_LOG_OUT'" | "'PLAYER_STARTED_MOVING'" | "'PLAYER_STOPPED_MOVING'" | "'etc...'"
 --- @alias DataProviderFilterFn fun(elem:DataProviderElement) | "function(elem) return true end"
 --- @alias HandlerFn fun(arg:any) | "function(arg) end"
---- @alias HandlerFnNoARg fun() | "function() end"
+--- @alias HandlerFnNoArg fun() | "function() end"
 --- @alias FontName string | "'GameFontNormal'" | "'GameFontNormalMed1'" | "'GameFontNormalOutline'" | "'QuestFontNormalHuge'" | "'GameFontHighlight'" | "'GameTooltipTextSmall'" | "'NumberFontNormalSmall'"
 --- @alias Icon number The spell icon texture
 --- @alias OriginalIcon Icon The original icon texture for this spell
