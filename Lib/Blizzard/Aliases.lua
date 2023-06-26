@@ -1,6 +1,8 @@
 --[[-----------------------------------------------------------------------------
 Common
 -------------------------------------------------------------------------------]]
+--- @alias Identifier number
+--- @alias SubType string
 --- @alias OptionalTable table
 --- @alias Index number
 --- @alias SpecializationIndex number | "1" | "2" | "3"
@@ -88,7 +90,7 @@ Item
 --- @alias StrippedItemLink string The stripped item link
 --- @alias ItemQuality number The Enum.ItemQuality number value
 --- @alias ItemLevel number The base item level, not including upgrades. See GetDetailedItemLevelInfo() for getting the actual item level.
---- @alias ItemSubtype string The localized sub-type name of the item: Bows, Guns, Staves, etc.
+--- @alias ItemSubType string The localized sub-type name of the item: Bows, Guns, Staves, etc.
 --- @alias ItemStackCount number The max amount of an item per stack, e.g. 200 for Runecloth.
 --- @alias ItemEquipLoc string The inventory equipment location in which the item may be equipped e.g. "INVTYPE_HEAD", or an empty string if it cannot be equipped [ItemEquipLoc]
 --- @alias ItemTexture number FileID - The texture for the item icon.

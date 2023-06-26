@@ -16,7 +16,7 @@ local ItemInfo = {
     minLevel = 1,
     --- @type ItemType
     type = '',
-    --- @type ItemSubtype
+    --- @type ItemSubType
     subType = '',
     --- @type ItemStackCount
     stackCount = 1,
@@ -57,12 +57,12 @@ Global Functions
 --- - [LE_ITEM_BIND](https://wowpedia.fandom.com/wiki/LE_ITEM_BIND)
 --- - [LE_EXPANSION](https://wowpedia.fandom.com/wiki/LE_EXPANSION)
 --- @param item ItemID_Link_Or_Name The itemID(number), link(string), or name(string)
---- @return ItemName, ItemLink, ItemQuality, ItemLevel, ItemLevel, ItemType, ItemSubtype, ItemStackCount, ItemEquipLoc, ItemTexture, SellPrice, ClassID, SubclassID, BindType, ExpacID, SetID, IsCraftingReagent
+--- @return ItemName, ItemLink, ItemQuality, ItemLevel, ItemLevel, ItemType, ItemSubType, ItemStackCount, ItemEquipLoc, ItemTexture, SellPrice, ClassID, SubclassID, BindType, ExpacID, SetID, IsCraftingReagent
 function GetItemInfo(item) end
 
 --- ### See: [API_GetItemInfoInstant](https://wowpedia.fandom.com/wiki/API_GetItemInfoInstant)
 --- @param item ItemID_Link_Or_Name
---- @return ItemID, ItemType, ItemSubtype, ItemEquipLoc, Icon, ClassID, SubclassID
+--- @return ItemID, ItemType, ItemSubType, ItemEquipLoc, Icon, ClassID, SubclassID
 function GetItemInfoInstant(item) end
 
 --- ### Usages:
