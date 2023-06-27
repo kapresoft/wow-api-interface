@@ -38,7 +38,7 @@ Common
 --- @alias Enabled boolean
 --- @alias Include boolean
 --- @alias OptionalFlag boolean
---- @alias BookType string | "BOOKTYPE_SPELL" | "BOOKTYPE_PET" | "'spell'" | "'pet'"
+--- @alias BookType string | "BOOKTYPE_SPELL" | "BOOKTYPE_PET" | "BOOKTYPE_PROFESSION" | "'spell'" | "'pet'"
 --- @alias BookTypeOptional BookType
 --- @alias CooldownType string | "'spell'" | "'item'" | "'macro'"
 --- @alias StartTime number | "0.0"

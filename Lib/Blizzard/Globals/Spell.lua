@@ -64,3 +64,17 @@ function GetSpellInfo(spell, bookType) end
 --- @param bookType BookTypeOptional
 --- @return Boolean
 function IsPassiveSpell(spell, bookType) end
+
+
+--- Checks if the target is in range of a spell.
+--- @param spell SpellName The name of the spell to check the range of. The player must know the spell.
+--- @param target UnitID The unit to use as a target for the spell.
+--- @return boolean boolean|nil True (1) if the target is in range of the spell, false (0) if the target is not in range of the spell, or nil if the provided arguments were invalid or inapplicable.
+function IsSpellInRange(spell, target) return true end
+
+--- Checks if the target is in range of a spell using spell book slot index.
+--- @param index Index The spell book slot index, ascending from 1.
+--- @param bookType BookType The type of spellbook to index: "spell" or "pet".
+--- @param target UnitID The unit to use as a target for the spell.
+--- @return boolean boolean|nil True (1) if the target is in range of the spell, false (0) if the target is not in range of the spell, or nil if the provided arguments were invalid or inapplicable.
+function IsSpellInRange(index, bookType, target) return true end
