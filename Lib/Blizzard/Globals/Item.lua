@@ -37,6 +37,11 @@ local ItemInfo = {
 --[[-----------------------------------------------------------------------------
 Global Functions
 -------------------------------------------------------------------------------]]
+--- Returns the spell effect for an item.
+--- #### See: [API_GetItemSpell](https://wowpedia.fandom.com/wiki/API_GetItemSpell)
+--- @param itemInfo ItemID_Link_Or_Name
+--- @return SpellName, SpellID
+function GetItemSpell(itemInfo) return 'Wrath', 1234 end
 
 --- Returns info for an item
 --- ### Example(s):
