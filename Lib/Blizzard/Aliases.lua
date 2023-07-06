@@ -39,12 +39,13 @@ Common
 --- @alias IsCraftingReagent boolean Whether the item can be used as a crafting reagent.
 --- @alias CannotBeCastedDueToLowMana boolean
 --- @alias Boolean boolean | "true" | "false"
---- @alias BooleanOptional Boolean | "nil" | "true" | "false"
+--- @alias BooleanOptional Boolean|nil | "nil" | "true" | "false"
 --- @alias Loadable Boolean
---- @alias Usable boolean
---- @alias Enabled boolean
+--- @alias Usable Boolean
+--- @alias Enabled Boolean
+--- @alias Disabled Boolean
 --- @alias Include boolean
---- @alias OptionalFlag boolean
+--- @alias OptionalFlag BooleanOptional
 --- @alias BookType string | "BOOKTYPE_SPELL" | "BOOKTYPE_PET" | "BOOKTYPE_PROFESSION" | "'spell'" | "'pet'"
 --- @alias BookTypeOptional BookType
 --- @alias CooldownType string | "'spell'" | "'item'" | "'macro'"
