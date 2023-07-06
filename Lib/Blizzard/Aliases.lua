@@ -4,7 +4,13 @@ Common
 --- @alias Identifier number
 --- @alias SubType string
 --- @alias OptionalTable table
+--- @alias Name string
+--- @alias AddOnName string
+--- @alias Title string
+--- @alias AddOnTitle string
+--- @alias Notes string
 --- @alias Index number
+--- @alias IndexOrName number|string
 --- @alias SpecializationIndex number | "1" | "2" | "3"
 --- @alias SpecializationIndexOptional SpecializationIndex | "nil" | "1" | "2" | "3"
 --- @alias FrameType string | "'Frame'" | "'Button'" | "'CheckButton'" | "'Cooldown'" | "'Editbox'" | "'GameTooltip'" | "'ScrollFrame'" | "'Slider'" | "'MessageFrame'"
@@ -34,6 +40,7 @@ Common
 --- @alias CannotBeCastedDueToLowMana boolean
 --- @alias Boolean boolean | "true" | "false"
 --- @alias BooleanOptional Boolean | "nil" | "true" | "false"
+--- @alias Loadable Boolean
 --- @alias Usable boolean
 --- @alias Enabled boolean
 --- @alias Include boolean
@@ -45,6 +52,8 @@ Common
 --- @alias Duration number | "1.0"
 --- @alias Enable number | "0" | "1"
 --- @alias ActionTypeName string | "'spell'" | "'item'" | "'macro'" | "'macrotext'" | "'petaction'" | "'money'" | "'mount'" | "'companion'" | "'merchant'" | "'battlepet'" | "'equipmentset'"
+--- @alias AddOnIsNotLoadableReason string
+--- @alias AddOnSecurity | "'SECURE_PROTECTED'"| "'INSECURE'"| "'SECURE'"
 --[[-----------------------------------------------------------------------------
 Frame
 -------------------------------------------------------------------------------]]
