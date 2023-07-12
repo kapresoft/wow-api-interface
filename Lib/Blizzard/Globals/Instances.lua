@@ -15,7 +15,7 @@ local InstanceInfo = {
     LfgDungeonID = 1,
 }
 
---- @type fun(difficultyId:number) : string, groupType, boolean, boolean, boolean, boolean, number
+--- @type fun(difficultyId:number) : string, GroupType, boolean, boolean, boolean, boolean, number
 --- #### See [https://wowpedia.fandom.com/wiki/API_GetDifficultyInfo](https://wowpedia.fandom.com/wiki/API_GetDifficultyInfo)
 --- ```
 ---  local name, groupType, isHeroic, isChallengeMode, displayHeroic, displayMythic, toggleDifficultyID = GetDifficultyInfo(difficultyID)

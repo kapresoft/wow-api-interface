@@ -27,15 +27,14 @@ Common
 --- @alias ScriptType string | "'OnEvent'" | "'OnShow'" | "'OnHide'" | "'OnClick'" | "'OnDoubleClick'" | "'OnDragStart'" | "'OnDragStop'" | "'OnReceiveDrag'" | "'PreClick'" | "'PostClick'" | "'OnLoad'" | "'OnUpdate'" | "'OnFinished'" | "'OnLoop'" | "'OnPause'" | "'OnPlay'" | "'OnStop'" | "'OnAttributeChanged'" | "'OnChar'" | "'OnEnable'" | "'OnDisable'" | "'OnEnter'" | "'OnLeave'" | "'OnKeyUp'" | "'OnKeyDown'" | "'OnMouseDown'" | "'OnMouseUp'" | "'OnMouseWheel'" | "'OnEnterPressed'" | "'OnEscapePressed'" | "'OnTabPressed'" | "'OnSpacePressed'" | "'OnCursorChanged'" | "'OnEditFocusGained'" | "'OnEditFocusLost'" | "'OnTextChanged'" | "'OnTextSet'"  | "'OnTooltipSetItem'" | "'OnValueChanged'"
 --- @alias ScriptTypeEventHandler fun(self:any, event:string) | "function(self, event) print('Event received:', event) end"
 --- @alias FrameEvent string | "'PLAYER_LOG_IN'" | "'PLAYER_LOG_OUT'" | "'PLAYER_STARTED_MOVING'" | "'PLAYER_STOPPED_MOVING'" | "'etc...'"
---- @alias DataProviderFilterFn fun(elem:DataProviderElement) | "function(elem) return true end"
+--- @alias DataProviderFilterFn fun(elem:DataProviderElement) : Boolean | "function(elem) return true end"
+--- @alias DataProviderHandlerFn fun(elem:DataProviderElement) | "function(elem) print('elem:', pformat(elem)) end"
+--- @alias PredicateFn fun(arg1:any, arg2:any) | "function(arg1, arg2, ...) end"
 --- @alias HandlerFn fun(arg:any) | "function(arg) end"
 --- @alias HandlerFnNoArg fun() | "function() end"
 --- @alias FontName string | "'GameFontNormal'" | "'GameFontNormalMed1'" | "'GameFontNormalOutline'" | "'QuestFontNormalHuge'" | "'GameFontHighlight'" | "'GameTooltipTextSmall'" | "'NumberFontNormalSmall'"
 --- @alias Icon number The spell icon texture
 --- @alias OriginalIcon Icon The original icon texture for this spell
---- @alias groupType string |'party'|'raid'
---- @alias InstanceType string | "'party'" | "'raid'" | "'arena'" | "'pvp'" | "'none'"
---- @alias InstanceDifficultyName string | "'Normal'" | "'Heroic'" | "'10 Player'" | "'25 Player (Heroic)'"
 --- @alias IsCraftingReagent boolean Whether the item can be used as a crafting reagent.
 --- @alias CannotBeCastedDueToLowMana boolean
 --- @alias Boolean boolean | "true" | "false"
@@ -133,3 +132,20 @@ CursorInfo
 --- @alias Info2 string
 --- @alias Info3 string
 --- @alias Info4 string
+
+--[[-----------------------------------------------------------------------------
+LFG / Party / Raid
+Difficulty ID: @see https://wowpedia.fandom.com/wiki/DifficultyID
+1 Normal
+2 Heroic
+3 10 Player
+4 25 Player
+5 10 Player (Heroic)
+6 25 Player (Heroic)
+-------------------------------------------------------------------------------]]
+--- @alias GroupType string |'party'|'raid'
+--- @alias InstanceType string | "'party'" | "'raid'" | "'arena'" | "'pvp'" | "'none'"
+--- @alias InstanceDifficulty { id:number, name:string } | "{ id=2, name='Heroic' }"
+--- @alias InstanceDifficultyName string | "'Normal'" | "'Heroic'" | "'10 Player'" | "'25 Player (Heroic)'"
+--- @alias InstanceDifficultyID number | "1" | "'2'" | "3" | "4" | "5" | "6"
+

@@ -28,12 +28,36 @@ local LFGFrameGroup = {
     CheckButton = {},
 }
 
----@class DataProvider
+--- @alias ElemDataIterator any Not sure what this is yet
+--- @see Interface/SharedXML/DataProvider.lua
+--- @class DataProvider
 local dp = {
-    ---@type fun(self:DataProvider, filterFn:DataProviderFilterFn) : DataProviderElement
+    --- @type fun(self:DataProvider, filterFn:DataProviderFilterFn) : DataProviderElement
     FindElementDataByPredicate = function(filterFn)  end,
-    ---@type fun(self:DataProvider, handler:DataProviderFilterFn) : DataProviderElement
-    ForEach = function(filterFn)  end
+
+    --- @type fun(self:DataProvider, index:Index) : DataProviderElement
+    Find = function(self, index) end,
+
+    --- @type fun(self:DataProvider) : Index, ElemDataIterator
+    FindIndex = function(self, elementData) end,
+
+    --- @type fun(self:DataProvider) : Index, DataProviderElement
+    FindByPredicate = function(self, predicate) end,
+
+    --- @type fun(self:DataProvider) : Index
+    FindIndexByPredicate = function(self, predicate) end,
+
+    --- @type fun(self:DataProvider) : Boolean
+    ContainsByPredicate = function(self, predicate) end,
+
+    --- @type fun(self:DataProvider, func:DataProviderHandlerFn)
+    ForEach = function(self, func) end,
+
+    --- @type fun(self:DataProvider, func:DataProviderHandlerFn)
+    ReverseForEach = function(self, func) end,
+
+    --- @type fun(self:DataProvider) : fun() : Index|nil, DataProviderElement
+    Enumerate = function(self)  end
 }
 
 --- @class DataProviderElement
@@ -54,18 +78,18 @@ local dpeData = {
 
 --- @class ActivityInfo
 local activityInfoTable = {
-    allowCrossFaction = true|false,
+    allowCrossFaction = true,
     categoryID = 1,
-    difficultyID = 1|2, -- 1: Normal, 2: Heroic
+    difficultyID = 1, -- 1: Normal, 2: Heroic
     displayType = 1,
     filters = 1,
     fullName = "string",
     groupFinderActivityGroupID = 1,
-    isCurrentRaidActivity = true|false,
-    isMythicActivity = true|false,
-    isMythicPlusActivity = true|false,
-    isPvpActivity = true|false,
-    isRatedPvpActivity = true|false,
+    isCurrentRaidActivity = true,
+    isMythicActivity = true,
+    isMythicPlusActivity = true,
+    isPvpActivity = true,
+    isRatedPvpActivity = true,
     mapID = 602,
     maxLevel = 0,
     maxLevelSuggestion = 80,
@@ -74,9 +98,9 @@ local activityInfoTable = {
     orderIndex = 1,
     redirectedDifficultyID = 1,
     shortName = "string",
-    showQuickJoinToast = true|false,
-    useDungeonRoleExpectations = true|false,
-    useHonorLevel = true|false,
+    showQuickJoinToast = true,
+    useDungeonRoleExpectations = true,
+    useHonorLevel = true,
 }
 
 ---``` local name, groupType, isHeroic, isChallengeMode, displayHeroic, displayMythic, toggleDifficultyID = GetDifficultyInfo(id) ```
@@ -86,11 +110,12 @@ local activityInfoTable = {
 --- - [https://wowpedia.fandom.com/wiki/DifficultyID](https://wowpedia.fandom.com/wiki/DifficultyID)
 --- @class DifficultyInfo
 local difficultyInfo = {
-    name = "10 Player (Heroic)"|'Heroic'|'Normal',
-    groupType = 'party'|'raid',
-    isHeroic = true|false,
-    isChallengeMode = true|false,
-    displayHeroic = true|false,
-    displayMythic = true|false,
+    name = "10 Player (Heroic)",
+    --- @type GroupType
+    groupType = 'party',
+    isHeroic = true,
+    isChallengeMode = true,
+    displayHeroic = true,
+    displayMythic = true,
     toggleDifficultyID = 1,
 }
