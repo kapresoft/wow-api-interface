@@ -148,4 +148,8 @@ Difficulty ID: @see https://wowpedia.fandom.com/wiki/DifficultyID
 --- @alias InstanceDifficulty { id:number, name:string } | "{ id=2, name='Heroic' }"
 --- @alias InstanceDifficultyName string | "'Normal'" | "'Heroic'" | "'10 Player'" | "'25 Player (Heroic)'"
 --- @alias InstanceDifficultyID number | "1" | "'2'" | "3" | "4" | "5" | "6"
-
+--- @alias LFGActivityID number
+--- @alias LFGActivities table<number, LFGActivityID>
+--- @alias QuestID number
+--- @alias QuestLogIndex number
+--- @alias QuestObjectiveType string | "'item'" | "'monster'"
