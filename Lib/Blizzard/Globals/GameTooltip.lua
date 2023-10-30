@@ -47,7 +47,8 @@ function A:SetBackpackToken(id) end
 function A:SetBagItem(bag, slot) end
 function A:SetBagItemChild() end
 function A:SetBuybackItem(slot) end
-function A:SetCompanionPet() end
+---@param petID Identifier The pet ID or GUID
+function A:SetCompanionPet(petID) end
 function A:SetConduit(id, rank) end
 function A:SetCurrencyByID(id) end
 function A:SetCompareAzeritePower(itemID, itemLevel, powerID, owningItemLink) end
