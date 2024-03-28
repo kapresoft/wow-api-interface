@@ -1,7 +1,11 @@
---- ### See: [https://wowpedia.fandom.com/wiki/UIOBJECT_ScriptRegion](https://wowpedia.fandom.com/wiki/UIOBJECT_ScriptRegion)
+--- ### See: [https://warcraft.wiki.gg/wiki/UIOBJECT_ScriptRegion](https://warcraft.wiki.gg/wiki/UIOBJECT_ScriptRegion)
 --- @class __ScriptRegion
 local A = {}
---- @alias _ScriptRegion __ScriptRegion|_AnimatableObject|_Object
+
+--- @alias ScriptRegion __ScriptRegion | AnimatableObject | Object
+
+--  _ScriptRegion is deprecated
+--- @alias _ScriptRegion ScriptRegion
 
 ------ @param enable boolean
 function A:EnableMouse(enable) end
@@ -33,7 +37,7 @@ function A:GetWidth(ignoreRect) end
 function A:HasScript(scriptName) end
 function A:Hide() end
 --- Securely post-hooks a widget script handler.
---- #### See: [https://wowpedia.fandom.com/wiki/API_ScriptRegion_HookScript](https://wowpedia.fandom.com/wiki/API_ScriptRegion_HookScript)
+--- #### See: [https://warcraft.wiki.gg/wiki/API_ScriptRegion_HookScript](https://warcraft.wiki.gg/wiki/API_ScriptRegion_HookScript)
 --- @param scriptTypeName ScriptType
 --- @param script HandlerFn
 --- @param bindingType number
@@ -70,7 +74,7 @@ function A:SetMouseClickEnabled(enabled) end
 function A:SetMouseMotionEnabled(enabled) end
 --- @param parent ObjectType
 function A:SetParent(parent) end
---- #### See: [https://wowpedia.fandom.com/wiki/API_ScriptRegion_SetPassThroughButtons](https://wowpedia.fandom.com/wiki/API_ScriptRegion_SetPassThroughButtons)
+--- #### See: [https://warcraft.wiki.gg/wiki/API_ScriptRegion_SetPassThroughButtons](https://warcraft.wiki.gg/wiki/API_ScriptRegion_SetPassThroughButtons)
 --- @param unpackedPrimitiveType number
 function A:SetPassThroughButtons(unpackedPrimitiveType) end
 --- @param scriptTypeName ScriptType

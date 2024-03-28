@@ -13,14 +13,10 @@ local AceDB_Profile = { enable = true, }
 local AceDB_ProfileKeys = { }
 
 --- @class AceDB
-local AceDB = {
-    --- @type AceDB_Global
-    global = AceDB_Global,
-    --- @type AceDB_Profile
-    profile = AceDB_Profile,
-    --- @type table<string, AceDB_Profile>
-    profiles = {}
-}
+--- @field global AceDB_Global
+--- @field profile AceDB_Profile
+--- @field profiles table<string, AceDB_Profile>
+local AceDB = { }
 
 --- @param DBObjectLib AceDB
 local function PropsAndMethods(DBObjectLib)
@@ -63,7 +59,8 @@ local function PropsAndMethods(DBObjectLib)
 
     --- Sets the defaults table for the given database object by clearing any that are currently set, and then setting the new defaults.
     --- @param defaults AceDB_Profile - A table of defaults for this database.
-    function DBObjectLib:RegisterDefaults(defaults) end
+    function DBObjectLib:RegisterDefaults(defaults)
+    end
 
     --- Creates a new database namespace, directly tied to the database.
     --- This is a full-scale database in its own right, other than the fact that it cannot control its profile individually.

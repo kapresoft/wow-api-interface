@@ -1,4 +1,4 @@
---- ## See: https://wowpedia.fandom.com/wiki/World_of_Warcraft_API#Equipment_Manager
+--- ## See: https://warcraft.wiki.gg/wiki/World_of_Warcraft_API#Equipment_Manager
 
 --- @class C_EquipmentSet
 local A = {
@@ -15,7 +15,7 @@ local A = {
     ---```
     --- name, iconFileID, setID, isEquipped, numItems, numEquipped, numInInventory, numLost, numIgnored = GetEquipmentSetInfo(1)
     ---```
-    --- ### See: [https://wowpedia.fandom.com/wiki/API_C_EquipmentSet.GetEquipmentSetInfo](https://wowpedia.fandom.com/wiki/API_C_EquipmentSet.GetEquipmentSetInfo)
+    --- ### See: [https://warcraft.wiki.gg/wiki/API_C_EquipmentSet.GetEquipmentSetInfo](https://warcraft.wiki.gg/wiki/API_C_EquipmentSet.GetEquipmentSetInfo)
     --- @type fun(equipmentSetId:number) : string, number, boolean, number, number, number, number, number
     GetEquipmentSetInfo = {},
 
@@ -29,7 +29,7 @@ local A = {
     UseEquipmentSet = {},
 
     --- ### Picks up an equipment set, placing it on the cursor.
-    --- #### See: [https://wowpedia.fandom.com/wiki/API_C_EquipmentSet.PickupEquipmentSet](https://wowpedia.fandom.com/wiki/API_C_EquipmentSet.PickupEquipmentSet)
+    --- #### See: [https://warcraft.wiki.gg/wiki/API_C_EquipmentSet.PickupEquipmentSet](https://warcraft.wiki.gg/wiki/API_C_EquipmentSet.PickupEquipmentSet)
     --- @param equipmentSetID number The equipment set index number
     --- @type fun(equipmentSetID:number)
     PickupEquipmentSet = {},

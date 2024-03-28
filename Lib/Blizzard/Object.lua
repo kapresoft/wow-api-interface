@@ -1,8 +1,12 @@
---- #### See: https://wowpedia.fandom.com/wiki/UIOBJECT_Object
+--- #### See: https://warcraft.wiki.gg/wiki/UIOBJECT_Object
 --- Inherits FrameScriptObject
 --- @class __Object
 local A = {}
---- @alias _Object __Object|_FrameScriptObject
+
+--- @alias Object __Object | FrameScriptObject
+
+--  _Object is deprecated
+--- @alias _Object Object
 
 --- @return string
 --- @param preferParentKey string

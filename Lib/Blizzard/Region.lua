@@ -1,8 +1,13 @@
 --- @class __Region
----#### Doc [UIOBJECT_Region](https://wowpedia.fandom.com/wiki/UIOBJECT_Region)
+---#### Doc [UIOBJECT_Region](https://warcraft.wiki.gg/wiki/UIOBJECT_Region)
 local A = {}
---- @alias _Region __Region|_ScriptRegion
---- @alias _SimpleRegion _Region
+
+--- @alias Region __Region | ScriptRegion
+--- @alias SimpleRegion Region
+
+--  _Region and _SimpleRegion is deprecated
+--- @alias _Region Region
+--- @alias _SimpleRegion Region
 
 ---Returns the script name and line where the region was created.
 function A:GetSourceLocation() end

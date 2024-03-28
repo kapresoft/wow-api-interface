@@ -1,59 +1,108 @@
 --[[-----------------------------------------------------------------------------
 Common
+The reason why the AddOn cannot be loaded. This is nil if the addon is loadable, otherwise it contains a string token indicating the reason that can be localized by prepending "ADDON_". ("BANNED", "CORRUPT", "DEMAND_LOADED", "DISABLED", "INCOMPATIBLE", "INTERFACE_VERSION", "MISSING")
 -------------------------------------------------------------------------------]]
---- @alias Identifier number
---- @alias SubType string
---- @alias OptionalTable table
---- @alias Name string
---- @alias AddOnName string
---- @alias Title string
---- @alias AddOnTitle string
---- @alias Notes string
---- @alias Index number
---- @alias IndexOrName number|string
---- @alias SpecializationIndex number | "1" | "2" | "3"
---- @alias SpecializationIndexOptional SpecializationIndex | "nil" | "1" | "2" | "3"
---- @alias FrameType string | "'Frame'" | "'Button'" | "'CheckButton'" | "'Cooldown'" | "'Editbox'" | "'GameTooltip'" | "'ScrollFrame'" | "'Slider'" | "'MessageFrame'"
---- @alias ObjectType string | "'Frame'" | "'Button'" | "'FontString'"
---- @alias RegionPointString string | "'TOPLEFT'" | "'TOPRIGHT'" | "'BOTTOMLEFT'" | "'BOTTOMRIGHT'" | "'TOP'" | "'BOTTOM'" | "'LEFT'" | "'RIGHT'" | "'CENTER'"
---- @alias DrawLayer string | "'BACKGROUND'" | "'BORDER'" | "'ARTWORK'" | "'OVERLAY'"  | "'HIGHLIGHT'"
---- @alias SubDrawLayer number | "-8"| "-7"| "-6"| "-5" | "-4"| "-3"| "-2"| "-1" | "0"| "1"| "2"| "3" | "4"| "5"| "6" | "7"
---- @alias NonNegativeNumber number | "0" | "1" | "2"
---- @alias HexColor string | "'FFEEA0A0'" | "'AARRGGBB'"
---- @alias RGBColor number | "0.0" | "1.0"
+--- @alias ActionTypeName EnumString | "'spell'" | "'item'" | "'macro'" | "'macrotext'" | "'petaction'" | "'money'" | "'mount'" | "'companion'" | "'merchant'" | "'battlepet'" | "'equipmentset'"
+--- @alias AddOnIsNotLoadableReason EnumString | "'The reason why the AddOn cannot be loaded.'" | "'BANNED'" | "'CORRUPT'" | "'DEMAND_LOADED'" | "'DISABLED'" | "'INCOMPATIBLE'" | "'INTERFACE_VERSION'" | "'MISSING'"
+--- @alias AddOnName string | "'The name of the AddOn (the folder name)'"
+--- @alias AddOnSecurity EnumString | "'Indicates the security status of the AddOn.'" | "'SECURE_PROTECTED'"| "'INSECURE'"| "'SECURE'"
+--- @alias AddOnTitle string | "'The title of the AddOn as listed in the .toc file'"
 --- @alias Alpha number | "0.0" | "1.0"
---- @alias RegionReference _Region | _ParentedObject | string | "'UIParent'" | "'FrameNameOrObj'"
---- @alias Number number | "0"
---- @alias ScriptType string | "'OnEvent'" | "'OnShow'" | "'OnHide'" | "'OnClick'" | "'OnDoubleClick'" | "'OnDragStart'" | "'OnDragStop'" | "'OnReceiveDrag'" | "'PreClick'" | "'PostClick'" | "'OnLoad'" | "'OnUpdate'" | "'OnFinished'" | "'OnLoop'" | "'OnPause'" | "'OnPlay'" | "'OnStop'" | "'OnAttributeChanged'" | "'OnChar'" | "'OnEnable'" | "'OnDisable'" | "'OnEnter'" | "'OnLeave'" | "'OnKeyUp'" | "'OnKeyDown'" | "'OnMouseDown'" | "'OnMouseUp'" | "'OnMouseWheel'" | "'OnEnterPressed'" | "'OnEscapePressed'" | "'OnTabPressed'" | "'OnSpacePressed'" | "'OnCursorChanged'" | "'OnEditFocusGained'" | "'OnEditFocusLost'" | "'OnTextChanged'" | "'OnTextSet'"  | "'OnTooltipSetItem'" | "'OnValueChanged'"
---- @alias ScriptTypeEventHandler fun(self:any, event:string) | "function(self, event) print('Event received:', event) end"
---- @alias FrameEvent string | "'PLAYER_LOG_IN'" | "'PLAYER_LOG_OUT'" | "'PLAYER_STARTED_MOVING'" | "'PLAYER_STOPPED_MOVING'" | "'etc...'"
---- @alias DataProviderFilterFn fun(elem:DataProviderElement) : Boolean | "function(elem) return true end"
---- @alias DataProviderHandlerFn fun(elem:DataProviderElement) | "function(elem) print('elem:', pformat(elem)) end"
---- @alias PredicateFn fun(arg1:any, arg2:any) | "function(arg1, arg2, ...) end"
---- @alias HandlerFn fun(arg:any) | "function(arg) end"
---- @alias HandlerFnNoArg fun() | "function() end"
---- @alias FontName string | "'GameFontNormal'" | "'GameFontNormalMed1'" | "'GameFontNormalOutline'" | "'QuestFontNormalHuge'" | "'GameFontHighlight'" | "'GameTooltipTextSmall'" | "'NumberFontNormalSmall'"
---- @alias Icon number The spell icon texture
---- @alias OriginalIcon Icon The original icon texture for this spell
---- @alias IsCraftingReagent boolean Whether the item can be used as a crafting reagent.
---- @alias CannotBeCastedDueToLowMana boolean
---- @alias Boolean boolean | "true" | "false"
---- @alias BooleanOptional Boolean|nil | "nil" | "true" | "false"
---- @alias Loadable Boolean
---- @alias Usable Boolean
---- @alias Enabled Boolean
---- @alias Disabled Boolean
---- @alias Include boolean
---- @alias OptionalFlag BooleanOptional
---- @alias BookType string | "BOOKTYPE_SPELL" | "BOOKTYPE_PET" | "BOOKTYPE_PROFESSION" | "'spell'" | "'pet'"
+--- @alias BookType EnumString | "BOOKTYPE_SPELL" | "BOOKTYPE_PET" | "BOOKTYPE_PROFESSION" | "'spell'" | "'pet'"
 --- @alias BookTypeOptional BookType
 --- @alias CooldownType string | "'spell'" | "'item'" | "'macro'"
---- @alias StartTime number | "0.0"
+--- @alias Count Number
+--- @alias NumberOfMounts Number
+--- @alias DataProviderFilterFn fun(elem:DataProviderElement) : Boolean | "function(elem) return true end"
+--- @alias DataProviderHandlerFn fun(elem:DataProviderElement) | "function(elem) print('elem:', pformat(elem)) end"
+--- @alias DrawLayer EnumString | "'BACKGROUND'" | "'BORDER'" | "'ARTWORK'" | "'OVERLAY'"  | "'HIGHLIGHT'"
 --- @alias Duration number | "1.0"
 --- @alias Enable number | "0" | "1"
---- @alias ActionTypeName string | "'spell'" | "'item'" | "'macro'" | "'macrotext'" | "'petaction'" | "'money'" | "'mount'" | "'companion'" | "'merchant'" | "'battlepet'" | "'equipmentset'"
---- @alias AddOnIsNotLoadableReason string
---- @alias AddOnSecurity | "'SECURE_PROTECTED'"| "'INSECURE'"| "'SECURE'"
+--- @alias EnumString string An enumerated string value
+--- @alias Faction number|nil
+--- @alias FontName string | "'GameFontNormal'" | "'GameFontNormalMed1'" | "'GameFontNormalOutline'" | "'QuestFontNormalHuge'" | "'GameFontHighlight'" | "'GameTooltipTextSmall'" | "'NumberFontNormalSmall'"
+--- @alias FrameEvent string | "'PLAYER_LOG_IN'" | "'PLAYER_LOG_OUT'" | "'PLAYER_STARTED_MOVING'" | "'PLAYER_STOPPED_MOVING'" | "'etc...'"
+--- @alias FrameType string | "'Frame'" | "'Button'" | "'CheckButton'" | "'Cooldown'" | "'Editbox'" | "'GameTooltip'" | "'ScrollFrame'" | "'Slider'" | "'MessageFrame'"
+--- @alias HandlerFn fun(arg:any) | "function(arg) end"
+--- @alias HandlerFnNoArg fun() | "function() end"
+--- @alias HexColor string | "'FFEEA0A0'" | "'AARRGGBB'"
+--- @alias Icon number The spell icon texture
+--- @alias IconPath string The path to icon texture
+--- @alias Identifier number
+--- @alias Index number
+--- @alias IndexOrName number|string
+--- @alias MountID number
+--- @alias MountName string
+--- @alias Name string
+--- @alias NonNegativeNumber number | "0" | "1" | "2"
+--- @alias Notes string
+--- @alias Number number | "0"
+--- @alias ObjectType string | "'Frame'" | "'Button'" | "'FontString'"
+--- @alias OptionalTable table
+--- @alias OriginalIcon Icon The original icon texture for this spell
+--- @alias PredicateFn fun(arg1:any, arg2:any) | "function(arg1, arg2, ...) end"
+--- @alias RegionPointString string | "'TOPLEFT'" | "'TOPRIGHT'" | "'BOTTOMLEFT'" | "'BOTTOMRIGHT'" | "'TOP'" | "'BOTTOM'" | "'LEFT'" | "'RIGHT'" | "'CENTER'"
+--- @alias RegionReference _Region | _ParentedObject | string | "'UIParent'" | "'FrameNameOrObj'"
+--- @alias RGBColor number | "0.0" | "1.0"
+--- @alias ScriptType string | "'OnEvent'" | "'OnShow'" | "'OnHide'" | "'OnClick'" | "'OnDoubleClick'" | "'OnDragStart'" | "'OnDragStop'" | "'OnReceiveDrag'" | "'PreClick'" | "'PostClick'" | "'OnLoad'" | "'OnUpdate'" | "'OnFinished'" | "'OnLoop'" | "'OnPause'" | "'OnPlay'" | "'OnStop'" | "'OnAttributeChanged'" | "'OnChar'" | "'OnEnable'" | "'OnDisable'" | "'OnEnter'" | "'OnLeave'" | "'OnKeyUp'" | "'OnKeyDown'" | "'OnMouseDown'" | "'OnMouseUp'" | "'OnMouseWheel'" | "'OnEnterPressed'" | "'OnEscapePressed'" | "'OnTabPressed'" | "'OnSpacePressed'" | "'OnCursorChanged'" | "'OnEditFocusGained'" | "'OnEditFocusLost'" | "'OnTextChanged'" | "'OnTextSet'"  | "'OnTooltipSetItem'" | "'OnValueChanged'"
+--- @alias ScriptTypeEventHandler fun(self:any, event:string) | "function(self, event) print('Event received:', event) end"
+--- @alias SourceType number
+--- @alias SpecializationIndex number | "1" | "2" | "3"
+--- @alias SpecializationIndexOptional SpecializationIndex | "nil" | "1" | "2" | "3"
+--- @alias StartTime number | "1.0"
+--- @alias SubDrawLayer number | "-8"| "-7"| "-6"| "-5" | "-4"| "-3"| "-2"| "-1" | "0"| "1"| "2"| "3" | "4"| "5"| "6" | "7"
+--- @alias SubType string
+--- @alias Title string
+---
+--- @alias CreatureDisplayInfoID number|nil
+--- @alias Description string
+--- @alias Source string
+--- @alias MountTypeID number
+--- @alias UiModelSceneID number
+--- @alias AnimId number
+--- @alias SpellVisualKitID number
+--- @alias UseError string|nil
+--- @alias LuaIndex number The first element is 1
+
+--[[-----------------------------------------------------------------------------
+Booleans
+-------------------------------------------------------------------------------]]
+--- @alias Boolean boolean | "true" | "false"
+--- @alias BooleanOptional Boolean|nil | "nil" | "true" | "false"
+--- @alias CannotBeCastedDueToLowMana boolean
+--- @alias CanSetFavorite boolean
+--- @alias Castable Boolean
+--- @alias Disabled Boolean
+--- @alias DisablePlayerMountPreview boolean
+--- @alias Enabled Boolean
+--- @alias EnabledInt number | "0" | "1"
+--- @alias Include boolean
+--- @alias IsActive boolean
+--- @alias IsCastable boolean
+--- @alias IsChecked boolean
+--- @alias IsCollected boolean
+--- @alias IsCraftingReagent boolean Whether the item can be used as a crafting reagent.
+--- @alias IsDisabled Boolean
+--- @alias IsEnabled Boolean
+--- @alias IsEnabledInt number | "0" | "1"
+--- @alias IsFactionSpecific boolean
+--- @alias IsFavorite boolean
+--- @alias IsForDragonriding boolean
+--- @alias IsInclude boolean
+--- @alias IsLoadable Boolean
+--- @alias IsSelfMount boolean
+--- @alias IsUsable boolean
+--- @alias IsUsable Boolean
+--- @alias IsUsingDefaultFilters boolean
+--- @alias IsValid boolean
+--- @alias IsVisible boolean
+--- @alias Loadable Boolean
+--- @alias NeedsFanfare boolean
+--- @alias OptionalFlag BooleanOptional
+--- @alias ShouldHideOnChar boolean
+--- @alias Usable Boolean
+
+
 --[[-----------------------------------------------------------------------------
 Frame
 -------------------------------------------------------------------------------]]
@@ -69,14 +118,21 @@ Unit
 --- @alias UnitClassLocalizedName string | "'warrior'" | "'paladin'"
 --- @alias UnitClass string | "'WARRIOR'" | "'PALADIN'" | "'HUNTER'" | "'ROGUE'" | "'PRIEST'" | "'DEATHKNIGHT'" | "'SHAMAN'" | "'MAGE'" | "'WARLOCK'" | "'MONK'" | "'DRUID'" | "'DEMONHUNTER'" | "'EVOKER'"
 --- @alias UnitClassID number | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12" | "13"
+--- @alias BuffName string
 
 --[[-----------------------------------------------------------------------------
 Spell
 -------------------------------------------------------------------------------]]
 --- @alias SpellID_Name_Or_Index number|string
+--- @alias SpellNameOrID number|string
 --- @alias SpellID number
+--- @alias SpellId number
 --- @alias SpellName string
+--- @alias SpellRank string
+--- @alias SpellLink string | "'Rank 1'" | "'Rank 2'"
+--- @alias SpellSubtext string
 --- @alias SpellLink string
+--- @alias RuneSpellName string | "'Hands Rune Ability'"| "'legs'"
 --- @alias Time number
 --- @alias Range number
 --- @alias CastTime Time Cast time in milliseconds, or 0 for instant spells.
@@ -119,7 +175,7 @@ Macro
 
 --[[-----------------------------------------------------------------------------
 Script Handlers
-• https://wowpedia.fandom.com/wiki/UIHANDLER_OnClick
+• https://warcraft.wiki.gg/wiki/UIHANDLER_OnClick
 -------------------------------------------------------------------------------]]
 --- @alias ButtonName string | "'LeftButton'" | "'RightButton'" | "'MiddleButton'" | "'Button4'" | "'Button5'" | "'ButtonN'"
 --- @alias ButtonDown Boolean True when the button is pressed, false when it is released
@@ -135,7 +191,7 @@ CursorInfo
 
 --[[-----------------------------------------------------------------------------
 LFG / Party / Raid
-Difficulty ID: @see https://wowpedia.fandom.com/wiki/DifficultyID
+Difficulty ID: @see https://warcraft.wiki.gg/wiki/DifficultyID
 1 Normal
 2 Heroic
 3 10 Player
@@ -153,3 +209,7 @@ Difficulty ID: @see https://wowpedia.fandom.com/wiki/DifficultyID
 --- @alias QuestID number
 --- @alias QuestLogIndex number
 --- @alias QuestObjectiveType string | "'item'" | "'monster'"
+
+--[[-----------------------------------------------------------------------------
+C_MountJournal
+-------------------------------------------------------------------------------]]

@@ -8,14 +8,14 @@ local _ReturnObject = {
 --- @class C_Timer
 local A = {
     --- ### Schedules a timer
-    --- #### See: [https://wowpedia.fandom.com/wiki/API_C_Timer.After](https://wowpedia.fandom.com/wiki/API_C_Timer.After)
+    --- #### See: [https://warcraft.wiki.gg/wiki/API_C_Timer.After](https://warcraft.wiki.gg/wiki/API_C_Timer.After)
     --- @param seconds number Time in seconds before the timer finishes.
     --- @param callback HandlerFnNoArg Callback function to run
     --- @type fun(seconds:number, callback:HandlerFnNoArg)
     After = {},
 
     --- ### Runs callback after given duration. (Cancelable)
-    --- #### See: [https://wowpedia.fandom.com/wiki/API_C_Timer.After](https://wowpedia.fandom.com/wiki/API_C_Timer.NewTimer)
+    --- #### See: [https://warcraft.wiki.gg/wiki/API_C_Timer.After](https://warcraft.wiki.gg/wiki/API_C_Timer.NewTimer)
     --- ```
     --- local ret = C_Timer.NewTimer(100000, function() print('hello') end, 1)
     --- if not ret:IsCancelled() then ret:Cancel() end
@@ -28,7 +28,7 @@ local A = {
     NewTimer = {},
 
     --- ### Runs callback multiple times iterating every given duration. (Cancelable). Errors thrown inside a callback function will automatically halt the ticker.
-    --- #### See: [https://wowpedia.fandom.com/wiki/API_C_Timer.After](https://wowpedia.fandom.com/wiki/API_C_Timer.NewTicker)
+    --- #### See: [https://warcraft.wiki.gg/wiki/API_C_Timer.After](https://warcraft.wiki.gg/wiki/API_C_Timer.NewTicker)
     --- ```
     --- local ret = C_Timer.NewTicker(1, function() print('hello') end, 1)
     --- if not ret:IsCancelled() then ret:Cancel() end

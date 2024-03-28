@@ -1,4 +1,4 @@
---- #### See [UIOBJECT_LayeredRegion](https://wowpedia.fandom.com/wiki/UIOBJECT_LayeredRegion)
+--- #### See [UIOBJECT_LayeredRegion](https://warcraft.wiki.gg/wiki/UIOBJECT_LayeredRegion)
 --- @class __LayeredRegion
 local A = {}
 --- @alias _LayeredRegion __LayeredRegion|_Region

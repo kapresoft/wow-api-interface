@@ -12,19 +12,23 @@ function CreateFrame(frameType , name, parent, template, id) end
 --[[-----------------------------------------------------------------------------
 Frame
 -------------------------------------------------------------------------------]]
---- @class _Frame_
+--- @class __Frame
 local A = {}
---- @alias _Frame _Frame_|_Region|_ScriptObject
+
+--- @alias Frame __Frame | Region | ScriptObject
+
+--  _Frame is deprecated. Use Frame
+--- @alias _Frame Frame
 
 ---Register for notifications when an event occurs.
----#### See: [https://wowpedia.fandom.com/wiki/Events](https://wowpedia.fandom.com/wiki/Events)
+---#### See: [https://warcraft.wiki.gg/wiki/Events](https://warcraft.wiki.gg/wiki/Events)
 --- @param event FrameEvent
 function A:RegisterEvent(event) end
 
 ---Register for notifications when events apply to certain units.
 --- @param event string name of the event, e.g. "UNIT_POWER".
 --- @param unit1 string unit to deliver the event for (UnitId).
----#### See [UnitId](https://wowpedia.fandom.com/wiki/UnitId)
+---#### See [UnitId](https://warcraft.wiki.gg/wiki/UnitId)
 function A:RegisterUnitEvent(event, unit1 , unit2, ...) end
 
 ---Register this frame to receive all events (For debugging only!)
@@ -154,7 +158,7 @@ function A:SetFrameLevel(level) end
 
 ---Positions the frame within a z-axis interval.
 --- @param strata string WORLD, BACKGROUND, LOW, MEDIUM, HIGH, DIALOG, FULLSCREEN, FULLSCREEN_DIALOG, TOOLTIP
----###Doc: [https://wowpedia.fandom.com/wiki/Frame_Strata](https://wowpedia.fandom.com/wiki/Frame_Strata)
+---###Doc: [https://warcraft.wiki.gg/wiki/Frame_Strata](https://warcraft.wiki.gg/wiki/Frame_Strata)
 function A:SetFrameStrata(strata) end
 
 ---Set the inset distances for the frame's hit rectangle.

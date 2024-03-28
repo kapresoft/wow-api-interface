@@ -1,5 +1,5 @@
 --- Events: UNIT_SPELLCAST_START, UNIT_SPELLCAST_STOP, UNIT_SPELLCAST_FAILED_QUIET
---- Doc: [https://wowpedia.fandom.com/wiki/UNIT_SPELLCAST_START](https://wowpedia.fandom.com/wiki/UNIT_SPELLCAST_START)
+--- Doc: [https://warcraft.wiki.gg/wiki/UNIT_SPELLCAST_START](https://warcraft.wiki.gg/wiki/UNIT_SPELLCAST_START)
 --- @class _SpellCastEventArguments
 local SpellCastEventArguments = {
     --- @see Blizzard_UnitId
@@ -9,7 +9,7 @@ local SpellCastEventArguments = {
 }
 
 --- Events: UNIT_SPELLCAST_SENT
---- Doc:  [https://wowpedia.fandom.com/wiki/UNIT_SPELLCAST_SENT](https://wowpedia.fandom.com/wiki/UNIT_SPELLCAST_SENT)
+--- Doc:  [https://warcraft.wiki.gg/wiki/UNIT_SPELLCAST_SENT](https://warcraft.wiki.gg/wiki/UNIT_SPELLCAST_SENT)
 --- @class _SpellCastSentEventArguments
 local SpellCastSentEventArguments = {
     --- @see Blizzard_UnitId

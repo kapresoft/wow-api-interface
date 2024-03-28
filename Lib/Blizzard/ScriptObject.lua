@@ -1,7 +1,11 @@
---- #### See: [UIOBJECT_ScriptObject](https://wowpedia.fandom.com/wiki/UIOBJECT_ScriptObject)
+--- #### See: [UIOBJECT_ScriptObject](https://warcraft.wiki.gg/wiki/UIOBJECT_ScriptObject)
 --- @class __ScriptObject
 local A = {}
---- @alias _ScriptObject __ScriptObject
+
+--- @alias ScriptObject __ScriptObject
+
+--  _ScriptObject is deprecated
+--- @alias _ScriptObject ScriptObject
 
 ---Returns the widget's script handler.
 --- @return function

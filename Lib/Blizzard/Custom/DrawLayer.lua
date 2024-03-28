@@ -1,5 +1,5 @@
 ---@class _DrawLayer
----#### Doc: [https://wowpedia.fandom.com/wiki/Layer](https://wowpedia.fandom.com/wiki/Layer)
+---#### Doc: [https://warcraft.wiki.gg/wiki/Layer](https://warcraft.wiki.gg/wiki/Layer)
 local DrawLayer = {
     BACKGROUND = 'BACKGROUND',
     BORDER = 'BORDER',

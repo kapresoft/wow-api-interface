@@ -1,7 +1,13 @@
 --- @class __FontInstance
----#### Doc: [UIOBJECT_FontInstance](https://wowpedia.fandom.com/wiki/UIOBJECT_FontInstance)
+---#### Doc: [UIOBJECT_FontInstance](https://warcraft.wiki.gg/wiki/UIOBJECT_FontInstance)
 local A = {}
---- @alias _FontInstance __FontInstance|_FrameScriptObject
+
+--- @alias FontInstance __FontInstance | FrameScriptObject
+
+-- _FontInstance is deprecated
+--- @alias _FontInstance FontInstance
+
+
 --[[-----------------------------------------------------------------------------
 Verification
 -------------------------------------------------------------------------------]]

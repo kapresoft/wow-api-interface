@@ -1,10 +1,10 @@
 --- ### Check if combat lockdown restrictions are active.
---- See: [https://wowpedia.fandom.com/wiki/API_InCombatLockdown](https://wowpedia.fandom.com/wiki/API_InCombatLockdown)
+--- See: [https://warcraft.wiki.gg/wiki/API_InCombatLockdown](https://warcraft.wiki.gg/wiki/API_InCombatLockdown)
 --- @type fun(): boolean -- true if lockdown restrictions are currently in effect, false otherwise
 InCombatLockdown = {}
 
 
---- #### See: [API_hooksecurefunc](https://wowpedia.fandom.com/wiki/API_hooksecurefunc)
+--- #### See: [API_hooksecurefunc](https://warcraft.wiki.gg/wiki/API_hooksecurefunc)
 
 
 --- Securely posthooks the specified function. The hook will be called with the same arguments after the original call is performed.

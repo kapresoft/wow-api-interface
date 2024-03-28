@@ -1,5 +1,5 @@
 ---@class CompanionInfo
----### Doc: [https://wowpedia.fandom.com/wiki/API_GetCompanionInfo](https://wowpedia.fandom.com/wiki/API_GetCompanionInfo)
+---### Doc: [https://warcraft.wiki.gg/wiki/API_GetCompanionInfo](https://warcraft.wiki.gg/wiki/API_GetCompanionInfo)
 local CompanionInfo = {
     ['petType'] = 'critter',
     ['index'] = -1,

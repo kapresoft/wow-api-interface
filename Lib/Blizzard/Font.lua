@@ -1,8 +1,11 @@
 --- @class __Font
----#### Doc: [UIOBJECT_Font](https://wowpedia.fandom.com/wiki/UIOBJECT_Font)
+---#### Doc: [UIOBJECT_Font](https://warcraft.wiki.gg/wiki/UIOBJECT_Font)
 local A = {}
---- @alias _Font __Font | _FontInstance
 
+--- @alias Font __Font | FontInstance
+
+-- _Font is deprecated
+--- @alias _Font Font
 
 --- @param sourceFont _FontObject
 function A:CopyFontObject(sourceFont) end

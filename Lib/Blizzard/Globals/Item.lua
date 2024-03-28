@@ -38,7 +38,7 @@ local ItemInfo = {
 Global Functions
 -------------------------------------------------------------------------------]]
 --- Returns the spell effect for an item.
---- #### See: [API_GetItemSpell](https://wowpedia.fandom.com/wiki/API_GetItemSpell)
+--- #### See: [API_GetItemSpell](https://warcraft.wiki.gg/wiki/API_GetItemSpell)
 --- @param itemInfo ItemID_Link_Or_Name
 --- @return SpellName, SpellID
 function GetItemSpell(itemInfo) return 'Wrath', 1234 end
@@ -51,21 +51,21 @@ function GetItemSpell(itemInfo) return 'Wrath', 1234 end
 ---  itemName, itemLink, itemQuality, itemLevel, itemMinLevel, itemType, itemSubType, itemStackCount, itemEquipLoc, itemTexture, sellPrice, classID, subclassID, bindType, expacID, setID, isCraftingReagent = GetItemInfo('Super Mana Potion')
 --- ```
 --- ### See:
---- - [GetItemInfo](https://wowpedia.fandom.com/wiki/API_GetItemInfo)
---- - [ItemLink](https://wowpedia.fandom.com/wiki/ItemLink)
---- - [Enum.ItemQuality](https://wowpedia.fandom.com/wiki/Enum.ItemQuality)
---- - [ItemLevel::GetDetailedItemLevelInfo()](https://wowpedia.fandom.com/wiki/API_GetDetailedItemLevelInfo)
+--- - [GetItemInfo](https://warcraft.wiki.gg/wiki/API_GetItemInfo)
+--- - [ItemLink](https://warcraft.wiki.gg/wiki/ItemLink)
+--- - [Enum.ItemQuality](https://warcraft.wiki.gg/wiki/Enum.ItemQuality)
+--- - [ItemLevel::GetDetailedItemLevelInfo()](https://warcraft.wiki.gg/wiki/API_GetDetailedItemLevelInfo)
 --- - [ItemSetID](https://wow.tools/dbc/?dbc=itemset)
---- - [ItemType](https://wowpedia.fandom.com/wiki/ItemType)
---- - [ItemEquipLoc::Enum.InventoryType](https://wowpedia.fandom.com/wiki/Enum.InventoryType)
---- - [FileID](https://wowpedia.fandom.com/wiki/FileID)
---- - [LE_ITEM_BIND](https://wowpedia.fandom.com/wiki/LE_ITEM_BIND)
---- - [LE_EXPANSION](https://wowpedia.fandom.com/wiki/LE_EXPANSION)
+--- - [ItemType](https://warcraft.wiki.gg/wiki/ItemType)
+--- - [ItemEquipLoc::Enum.InventoryType](https://warcraft.wiki.gg/wiki/Enum.InventoryType)
+--- - [FileID](https://warcraft.wiki.gg/wiki/FileID)
+--- - [LE_ITEM_BIND](https://warcraft.wiki.gg/wiki/LE_ITEM_BIND)
+--- - [LE_EXPANSION](https://warcraft.wiki.gg/wiki/LE_EXPANSION)
 --- @param item ItemID_Link_Or_Name The itemID(number), link(string), or name(string)
 --- @return ItemName, ItemLink, ItemQuality, ItemLevel, ItemLevel, ItemType, ItemSubType, ItemStackCount, ItemEquipLoc, ItemTexture, SellPrice, ClassID, SubclassID, BindType, ExpacID, SetID, IsCraftingReagent
 function GetItemInfo(item) end
 
---- ### See: [API_GetItemInfoInstant](https://wowpedia.fandom.com/wiki/API_GetItemInfoInstant)
+--- ### See: [API_GetItemInfoInstant](https://warcraft.wiki.gg/wiki/API_GetItemInfoInstant)
 --- @param item ItemID_Link_Or_Name
 --- @return ItemID, ItemType, ItemSubType, ItemEquipLoc, Icon, ClassID, SubclassID
 function GetItemInfoInstant(item) end
@@ -80,7 +80,7 @@ function IsUsableItem(item) end
 
 
 --- Returns the number (or available charges) of an item in the inventory.
---- ### See: [API_GetItemCount](https://wowpedia.fandom.com/wiki/API_GetItemCount)
+--- ### See: [API_GetItemCount](https://warcraft.wiki.gg/wiki/API_GetItemCount)
 --- ### Usage:
 --- ```
 --- count = GetItemCount('Mana Gem', false, true)
@@ -102,3 +102,9 @@ function GetItemCount(item, includeBank, includeUses, includeReagentBank) end
 --- @param item ItemID_Link_Or_Name
 --- @return StartTime, Duration, Enable
 function GetItemCooldown(item) end
+
+--- Checks if the specified item is within the player's interaction range.
+--- @param item ItemID The name or ID of the item to check.
+--- @param target UnitID The unit to check the range against. Defaults to "target" if nil.
+--- @return Boolean Returns true if the item is within range; otherwise, false.
+function IsItemInRange(item, target) end

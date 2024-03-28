@@ -1,6 +1,6 @@
 ---Also known as AlphaMode
 ---@class _BlendMode
----#### Doc: [https://wowpedia.fandom.com/wiki/UITYPE_AlphaMode](https://wowpedia.fandom.com/wiki/UITYPE_AlphaMode)
+---#### Doc: [https://warcraft.wiki.gg/wiki/UITYPE_AlphaMode](https://warcraft.wiki.gg/wiki/UITYPE_AlphaMode)
 local BlendMode = {
     DISABLE = 'DISABLE',
     BLEND = 'BLEND',

@@ -106,8 +106,8 @@ local activityInfoTable = {
 ---``` local name, groupType, isHeroic, isChallengeMode, displayHeroic, displayMythic, toggleDifficultyID = GetDifficultyInfo(id) ```
 --- #### See
 --- - GetDifficultyInfo(id:number)
---- - [https://wowpedia.fandom.com/wiki/API_GetDifficultyInfo](https://wowpedia.fandom.com/wiki/API_GetDifficultyInfo)
---- - [https://wowpedia.fandom.com/wiki/DifficultyID](https://wowpedia.fandom.com/wiki/DifficultyID)
+--- - [https://warcraft.wiki.gg/wiki/API_GetDifficultyInfo](https://warcraft.wiki.gg/wiki/API_GetDifficultyInfo)
+--- - [https://warcraft.wiki.gg/wiki/DifficultyID](https://warcraft.wiki.gg/wiki/DifficultyID)
 --- @class DifficultyInfo
 local difficultyInfo = {
     name = "10 Player (Heroic)",

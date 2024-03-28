@@ -1,4 +1,4 @@
---- @alias MessageHandlerFn fun(event:string, source:any, ...) | "function(evt, source, ...) end"
+--- @alias MessageHandlerFn fun(msg:string, source:any, ...) | "function(msg, source, ...) end"
 --- @alias EventHandlerFn fun(event:string, source:any, ...) | "function(evt, source, ...) end"
 --- @class AceEvent
 local _AceEvent = {

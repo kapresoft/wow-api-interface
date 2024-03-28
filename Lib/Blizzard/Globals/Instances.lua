@@ -1,4 +1,4 @@
---- ### See: [API_GetInstanceInfo](https://wowpedia.fandom.com/wiki/API_GetInstanceInfo)
+--- ### See: [API_GetInstanceInfo](https://warcraft.wiki.gg/wiki/API_GetInstanceInfo)
 --- @class InstanceInfo
 local InstanceInfo = {
     name = 'The Nexus',
@@ -16,7 +16,7 @@ local InstanceInfo = {
 }
 
 --- @type fun(difficultyId:number) : string, GroupType, boolean, boolean, boolean, boolean, number
---- #### See [https://wowpedia.fandom.com/wiki/API_GetDifficultyInfo](https://wowpedia.fandom.com/wiki/API_GetDifficultyInfo)
+--- #### See [https://warcraft.wiki.gg/wiki/API_GetDifficultyInfo](https://warcraft.wiki.gg/wiki/API_GetDifficultyInfo)
 --- ```
 ---  local name, groupType, isHeroic, isChallengeMode, displayHeroic, displayMythic, toggleDifficultyID = GetDifficultyInfo(difficultyID)
 --- ```

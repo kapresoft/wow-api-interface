@@ -1,5 +1,5 @@
 --- UIObject is an abstract widget type that all user interface elements derive from.
---- ### See: [https://wowpedia.fandom.com/wiki/UIOBJECT_UIObject](https://wowpedia.fandom.com/wiki/UIOBJECT_UIObject)
+--- ### See: [https://warcraft.wiki.gg/wiki/UIOBJECT_UIObject](https://warcraft.wiki.gg/wiki/UIOBJECT_UIObject)
 --- @class __UIObject
 local A = {}
 --- @alias _UIObject __UIObject

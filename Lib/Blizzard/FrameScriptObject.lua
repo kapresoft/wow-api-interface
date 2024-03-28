@@ -1,6 +1,10 @@
 --- @class __FrameScriptObject
 local A = {}
---- @alias _FrameScriptObject __FrameScriptObject
+
+--- @alias FrameScriptObject __FrameScriptObject
+
+-- _FrameScriptObject is deprecated
+--- @alias _FrameScriptObject FrameScriptObject
 
 --- @return string
 function A:GetName() end

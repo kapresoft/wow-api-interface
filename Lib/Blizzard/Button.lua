@@ -1,7 +1,11 @@
---- #### See: [https://wowpedia.fandom.com/wiki/UIOBJECT_Button](https://wowpedia.fandom.com/wiki/UIOBJECT_Button)
+--- #### See: [https://warcraft.wiki.gg/wiki/UIOBJECT_Button](https://warcraft.wiki.gg/wiki/UIOBJECT_Button)
 --- @class __Button
 local A = {}
---- @alias _Button __Button | _Frame
+
+--- @alias Button __Button | Frame
+
+--  _Button is Deprecated
+--- @alias _Button Button
 
 ---Execute the click action of the button.
 function A:Click() end
@@ -12,26 +16,25 @@ function A:Enable() end
 ---Disable the Button so that it cannot be clicked.
 function A:Disable() end
 
-
----Return the current state ("PUSHED","NORMAL") of the Button.
----@return string
+--- Return the current state ("PUSHED","NORMAL") of the Button.
+--- @return string
 function A:GetButtonState() end
 
----Return the font object for the Button when disabled - New in 1.10.
+--- Return the font object for the Button when disabled - New in 1.10.
 function A:GetDisabledFontObject() end
 
----Get the texture for this button when disabled - New in 1.11.
----@return _Texture
+--- Get the texture for this button when disabled - New in 1.11.
+--- @return _Texture
 function A:GetDisabledTexture() end
 
----Get this button's label FontString - New in 1.11.
+--- Get this button's label FontString - New in 1.11.
 function A:GetFontString() end
 
----Return the font object for the Button when highlighted - New in 1.10.
+--- Return the font object for the Button when highlighted - New in 1.10.
 function A:GetHighlightFontObject() end
 
 ---Get the texture for this button when highlighted.
----@return _Texture
+--- @return _Texture
 function A:GetHighlightTexture() end
 
 ---Get whether the button is allowed to run its OnEnter and OnLeave scripts even while disabled - New in 3.3.
@@ -41,14 +44,14 @@ function A:GetMotionScriptsWhileDisabled() end
 function A:GetNormalFontObject() end
 
 ---Get the normal texture for this button - New in 1.11.
----@return _Texture
+--- @return _Texture
 function A:GetNormalTexture() end
 
 ---Get the text offset when this button is pushed (x, y) - New in 1.11.
 function A:GetPushedTextOffset() end
 
 ---Get the texture for this button when pushed - New in 1.11.
----@return _Texture
+--- @return _Texture
 function A:GetPushedTexture() end
 
 ---Get the text label for the Button.
@@ -58,11 +61,11 @@ function A:GetText() end
 function A:GetTextHeight() end
 
 ---Get the width of the Button's text.
----@return number
+--- @return number
 function A:GetTextWidth() end
 
 ---Determine whether the Button is enabled.
----@return Enabled
+--- @return Enabled
 function A:IsEnabled() end
 
 ---Set the Button to always be drawn highlighted.
@@ -70,9 +73,10 @@ function A:LockHighlight() end
 
 
 ---Specify which mouse button up/down actions cause this button to receive an OnClick notification.
---- @param clickType1 string AnyUp, AnyDown, LeftButtonDown, LeftButtonUp (default), MiddleButtonUp, MiddleButtonDown, RightButtonDown, RightButtonUp, Button4Up, Button4Down, Button5Up, Button5Down
---- @param clickType2 string
----#### Doc [https://wowpedia.fandom.com/wiki/API_Button_RegisterForClicks](https://wowpedia.fandom.com/wiki/API_Button_RegisterForClicks)
+--- @param clickType1 string | "'AnyUp'" | "'AnyDown'" | "'LeftButtonDown'" | "'LeftButtonUp'" | "'MiddleButtonUp'" | "'MiddleButtonDown'" | "'RightButtonDown'" | "'RightButtonUp'" | "'Button4Up'" | "'Button4Down'" | "'Button5Up'" | "'Button5Down'"
+--- @param clickType2 string | "'AnyUp'" | "'AnyDown'" | "'LeftButtonDown'" | "'LeftButtonUp'" | "'MiddleButtonUp'" | "'MiddleButtonDown'" | "'RightButtonDown'" | "'RightButtonUp'" | "'Button4Up'" | "'Button4Down'" | "'Button5Up'" | "'Button5Down'"
+--- @vararg string | "'AnyUp'" | "'AnyDown'" | "'LeftButtonDown'" | "'LeftButtonUp'" | "'MiddleButtonUp'" | "'MiddleButtonDown'" | "'RightButtonDown'" | "'RightButtonUp'" | "'Button4Up'" | "'Button4Down'" | "'Button5Up'" | "'Button5Down'"
+---#### Doc [https://warcraft.wiki.gg/wiki/API_Button_RegisterForClicks](https://warcraft.wiki.gg/wiki/API_Button_RegisterForClicks)
 function A:RegisterForClicks(clickType1, clickType2, ...) end
 function A:RegisterForMouse() end
 

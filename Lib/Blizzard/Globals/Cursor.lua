@@ -1,11 +1,11 @@
 --- ### Places a spell onto the cursor
---- #### See: [https://wowpedia.fandom.com/wiki/API_PickupSpell](https://wowpedia.fandom.com/wiki/API_PickupSpell)
+--- #### See: [https://warcraft.wiki.gg/wiki/API_PickupSpell](https://warcraft.wiki.gg/wiki/API_PickupSpell)
 --- @param spellID number The spell ID
 --- @type fun(spellID:number)
 PickupSpell = {}
 
 --- ### Places a macro onto the cursor.
---- #### See: [https://wowpedia.fandom.com/wiki/API_PickupMacro](https://wowpedia.fandom.com/wiki/API_PickupMacro)
+--- #### See: [https://warcraft.wiki.gg/wiki/API_PickupMacro](https://warcraft.wiki.gg/wiki/API_PickupMacro)
 --- ```
 --- PickupMacro(1)
 --- PickupMacro('MyMacro')
@@ -15,20 +15,20 @@ PickupSpell = {}
 PickupMacro = {}
 
 --- ### Place the item on the cursor.
---- #### See: [https://wowpedia.fandom.com/wiki/API_PickupItem](https://wowpedia.fandom.com/wiki/API_PickupItem)
+--- #### See: [https://warcraft.wiki.gg/wiki/API_PickupItem](https://warcraft.wiki.gg/wiki/API_PickupItem)
 --- @param item number|string Any of itemID, itemString, itemName or itemLink
 --- @type fun(item:number|string)
 PickupItem = {}
 
 --- ### Place a companion or mount on a cursor (NOCOMBAT)
---- #### See: [https://wowpedia.fandom.com/wiki/API_PickupCompanion](https://wowpedia.fandom.com/wiki/API_PickupCompanion)
+--- #### See: [https://warcraft.wiki.gg/wiki/API_PickupCompanion](https://warcraft.wiki.gg/wiki/API_PickupCompanion)
 --- @param type CompanionType The companion type
 --- @param index number The macro index number
 --- @type fun(type:CompanionType, index:number)
 PickupCompanion = {}
 
 --- Returns what the mouse cursor is holding.
---- ### See: [API_GetCursorInfo](https://wowpedia.fandom.com/wiki/API_GetCursorInfo)
+--- ### See: [API_GetCursorInfo](https://warcraft.wiki.gg/wiki/API_GetCursorInfo)
 --- ## Examples:
 --- ```
 ---  # Item Cursor

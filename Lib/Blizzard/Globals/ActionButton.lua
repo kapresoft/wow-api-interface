@@ -1,4 +1,4 @@
---- #### See: [API_GetActionInfo](https://wowpedia.fandom.com/wiki/API_GetActionInfo)
+--- #### See: [API_GetActionInfo](https://warcraft.wiki.gg/wiki/API_GetActionInfo)
 --- ```
 --- actionType, id, subType = GetActionInfo(1)
 --- ```

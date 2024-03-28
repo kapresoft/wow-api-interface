@@ -1,7 +1,10 @@
--- ### See https://wowpedia.fandom.com/wiki/UIOBJECT_ScriptRegion
+-- ### See https://warcraft.wiki.gg/wiki/UIOBJECT_ScriptRegion
 --- @class __AnimatableObject
 local A = {}
---- @alias _AnimatableObject __AnimatableObject
+
+--- @alias AnimatableObject __AnimatableObject
+--- _AnimatableObject is deprecated
+--- @alias _AnimatableObject AnimatableObject
 
 --- @param name string
 --- @param templateName string

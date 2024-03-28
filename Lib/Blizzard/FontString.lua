@@ -1,6 +1,6 @@
 ---EmmyLua does not yet support multiple inheritance
 ---@class _FontString_
----#### Doc [UIOBJECT_FontString](https://wowpedia.fandom.com/wiki/UIOBJECT_FontString)
+---#### Doc [UIOBJECT_FontString](https://warcraft.wiki.gg/wiki/UIOBJECT_FontString)
 local A = {}
 --- @alias _FontString _FontString_|_Region|_ScriptRegion
 

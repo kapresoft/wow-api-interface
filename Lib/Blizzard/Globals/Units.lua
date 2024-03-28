@@ -1,4 +1,4 @@
---- #### See: [API_UnitAura#ForEachAura](https://wowpedia.fandom.com/wiki/API_UnitAura#ForEachAura)
+--- #### See: [API_UnitAura#ForEachAura](https://warcraft.wiki.gg/wiki/API_UnitAura#ForEachAura)
 --- #### Example
 --- ```
 --- name, icon, count, dispelType, duration, expirationTime, source, isStealable, nameplateShowPersonal,
@@ -12,6 +12,14 @@
 --- @param filter UnitAuraFilter Optional
 function UnitAura(unit, index, filter) end
 
+
+--- Returns information about the specified buff on a unit.
+--- @param unit string The unit to query (e.g., "player", "target").
+--- @param index number The index of the buff to query, starting at 1.
+--- @param filter string|nil Optional. A filter to restrict the buffs to query (e.g., "CANCELABLE", "NOT_CANCELABLE").
+--- @return BuffName, Count, number|nil, string|nil, number|nil, number|nil, number|nil, boolean|nil, boolean|nil, number|nil, boolean|nil, boolean|nil, boolean|nil, number|nil name, icon, count, debuffType, duration, expirationTime, source, isStealable, nameplateShowPersonal, spellId, canApplyAura, isBossAura, castByPlayer, timeMod The buff information.
+function UnitBuff(unit, index, filter) end
+
 --- #### Example:
 --- ```
 --- className, classFilename, classId = UnitClass('player')
@@ -19,6 +27,11 @@ function UnitAura(unit, index, filter) end
 --- @param unit UnitID
 --- @return UnitClassLocalizedName, UnitClass, UnitClassID
 function UnitClass(unit) end
+
+--- Returns a boolean indicating whether the specified unit is dead.
+--- @param unitId UnitID The unitId to query (e.g., "player", "target").
+--- @return boolean isDead True if the unit is dead, false otherwise.
+function UnitIsDead(unitId) end
 
 --- @see Blizzard_UnitId
 --- @param unit UnitID
@@ -37,6 +50,12 @@ function UnitIsEnemy(unit, otherUnit)  end
 --- @param unit UnitID
 --- @return string, string The name and realm of the unit.
 function UnitName(unit) end
+
+--- Returns the name of the unit.
+--- @param unitId UnitID The unitId to query (e.g., "player", "target").
+--- @param showServerName BooleanOptional Optional. If true, the server name will be appended for players from other realms (e.g., "Name - Server").
+--- @return string name The name of the unit. Returns nil if the unit does not exist.
+function GetUnitName(unitId, showServerName) end
 
 --- Get the Unit name and realm.
 --- The name of the unit: Returns nil if the unit doesn't exist, e.g. the player has no target selected. The normalized realm the unit is from, e.g. "DarkmoonFaire". Returns nil if the unit is from the same realm.
