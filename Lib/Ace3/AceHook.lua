@@ -4,6 +4,10 @@ local AceHook = { }
 ---@param o AceHook
 local function PropsAndMethods(o)
 
+    --- @param target any target object to embed AceHook in
+    --- @return any The target obj
+    function o:Embed( target ) end
+
     --- Hook a function or a method on an object.
     --- The hook created will be a "safe hook", that means that your handler will be called before the hooked function ("Pre-Hook"), and you don't have to call the original function yourself, however you cannot stop the execution of the function, or modify any of the arguments/return values.
     --- This type of hook is typically used if you need to know if some function got called, and don't want to modify it.

@@ -1,8 +1,7 @@
 --- ### Check if combat lockdown restrictions are active.
 --- See: [https://warcraft.wiki.gg/wiki/API_InCombatLockdown](https://warcraft.wiki.gg/wiki/API_InCombatLockdown)
---- @type fun(): boolean -- true if lockdown restrictions are currently in effect, false otherwise
-InCombatLockdown = {}
-
+--- @return Boolean
+function InCombatLockdown()  end
 
 --- #### See: [API_hooksecurefunc](https://warcraft.wiki.gg/wiki/API_hooksecurefunc)
 

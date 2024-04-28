@@ -16,8 +16,10 @@ The reason why the AddOn cannot be loaded. This is nil if the addon is loadable,
 --- @alias DataProviderFilterFn fun(elem:DataProviderElement) : Boolean | "function(elem) return true end"
 --- @alias DataProviderHandlerFn fun(elem:DataProviderElement) | "function(elem) print('elem:', pformat(elem)) end"
 --- @alias DrawLayer EnumString | "'BACKGROUND'" | "'BORDER'" | "'ARTWORK'" | "'OVERLAY'"  | "'HIGHLIGHT'"
+--- @alias DisplayText string
 --- @alias Duration number | "1.0"
 --- @alias Enable number | "0" | "1"
+--- @alias EventName string Blizzard Event Name
 --- @alias EnumString string An enumerated string value
 --- @alias Faction number|nil
 --- @alias FontName string | "'GameFontNormal'" | "'GameFontNormalMed1'" | "'GameFontNormalOutline'" | "'QuestFontNormalHuge'" | "'GameFontHighlight'" | "'GameTooltipTextSmall'" | "'NumberFontNormalSmall'"
@@ -28,6 +30,10 @@ The reason why the AddOn cannot be loaded. This is nil if the addon is loadable,
 --- @alias HexColor string | "'FFEEA0A0'" | "'AARRGGBB'"
 --- @alias Icon number The spell icon texture
 --- @alias IconPath string The path to icon texture
+--- @alias IconIDOrPath Icon|IconPath
+--- @alias Texture Icon
+--- @alias TexturePath IconPath
+--- @alias TextureIDOrPath Texture|TexturePath
 --- @alias Identifier number
 --- @alias Index number
 --- @alias IndexOrName number|string
@@ -49,10 +55,13 @@ The reason why the AddOn cannot be loaded. This is nil if the addon is loadable,
 --- @alias SourceType number
 --- @alias SpecializationIndex number | "1" | "2" | "3"
 --- @alias SpecializationIndexOptional SpecializationIndex | "nil" | "1" | "2" | "3"
---- @alias StartTime number | "1.0"
+--- @alias StartTime number | "1.0" | "'In Milliseconds'"
+--- @alias EndTime number | "1.0" | "'In Milliseconds'"
 --- @alias SubDrawLayer number | "-8"| "-7"| "-6"| "-5" | "-4"| "-3"| "-2"| "-1" | "0"| "1"| "2"| "3" | "4"| "5"| "6" | "7"
 --- @alias SubType string
 --- @alias Title string
+--- @alias OptionalTimeDelayInMilli number|nil The time delay in milliseconds
+--- @alias TimeDelayInMilli number The time delay in milliseconds
 ---
 --- @alias CreatureDisplayInfoID number|nil
 --- @alias Description string
@@ -91,6 +100,8 @@ Booleans
 --- @alias IsInclude boolean
 --- @alias IsLoadable Boolean
 --- @alias IsSelfMount boolean
+--- @alias IsTradeSkill boolean
+--- @alias IsUninterruptible boolean
 --- @alias IsUsable boolean
 --- @alias IsUsable Boolean
 --- @alias IsUsingDefaultFilters boolean
@@ -135,6 +146,7 @@ Spell
 --- @alias RuneSpellName string | "'Hands Rune Ability'"| "'legs'"
 --- @alias Time number
 --- @alias Range number
+--- @alias CastID string
 --- @alias CastTime Time Cast time in milliseconds, or 0 for instant spells.
 --- @alias CurrentCharges number The number of charges of the ability currently available.
 --- @alias MaxCharges number The maximum number of charges the ability may have available.
@@ -211,5 +223,7 @@ Difficulty ID: @see https://warcraft.wiki.gg/wiki/DifficultyID
 --- @alias QuestObjectiveType string | "'item'" | "'monster'"
 
 --[[-----------------------------------------------------------------------------
-C_MountJournal
+FloatingChatFrame
 -------------------------------------------------------------------------------]]
+--- @alias ChatType string | "'SAY'" | "'YELL'" | "'WHISPER'" | "'PARTY'" | "'RAID'" | "'GUILD'" | "'OFFICER'" | "'ACHIEVEMENT'" | "'EMOTE'" | "'CHANNEL'" | "'SYSTEM'" | "'BN_WHISPER'" | "'BN_CONVERSATION'" | "'BN_ALERT'" | "'BN_BROADCAST'" | "'BN_INLINE_TOAST_ALERT'" | "'COMBAT_GUILD_XP_GAIN'" | "'COMBAT_HONOR_GAIN'" | "'COMBAT_FACTION_CHANGE'" | "'LOOT'" | "'MONEY'" | "'COMBAT_MISC_INFO'" | "'COMBAT_XP_GAIN'" | "'PET_INFO'" | "'PET_BATTLE_COMBAT_LOG'" | "'PET_BATTLE_INFO'" | "'INSTANCE_CHAT'" | "'INSTANCE_CHAT_LEADER'" | "'RAID_WARNING'" | "'RAID_BOSS_WHISPER'" | "'RAID_LEADER'" | "'BG_SYSTEM_NEUTRAL'" | "'BG_SYSTEM_ALLIANCE'" | "'BG_SYSTEM_HORDE'" | "'PVP'" | "'ARENA_POINTS'"
+

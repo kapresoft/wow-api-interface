@@ -1,3 +1,10 @@
+--[[
+Hierarchy Explanation:
+ • UIObject: The base class for all UI elements in World of Warcraft.
+ • Region: Inherits from UIObject. It is a superclass for all types of regions that can be placed in a frame, including Texture and FontString.
+ • Frame: Inherits from Region. This is the basic container used for most UI elements and can handle events, scripts, and contain other Regions.
+]]
+
 --[[-----------------------------------------------------------------------------
 Frame Globals
 -------------------------------------------------------------------------------]]
@@ -15,7 +22,7 @@ Frame
 --- @class __Frame
 local A = {}
 
---- @alias Frame __Frame | Region | ScriptObject
+--- @alias Frame __Frame | UIObject | Region | ScriptRegion
 
 --  _Frame is deprecated. Use Frame
 --- @alias _Frame Frame
@@ -329,5 +336,6 @@ function A:SetID(id) end
 --[[-----------------------------------------------------------------------------
 Verification
 -------------------------------------------------------------------------------]]
---- @type _Frame
-local B = {}
+--- @type Frame
+local b = {}
+

@@ -1,6 +1,11 @@
 --- @class __TextureBase
 local A = {}
+
+--- @alias TextureBase __TextureBase|_Region
+
+--  The following is deprecated
 --- @alias _TextureBase __TextureBase|_Region
+
 
 function A:GetAtlas() end
 function A:GetBlendMode() end

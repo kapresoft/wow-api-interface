@@ -1,6 +1,10 @@
 --- #### See [UIOBJECT_LayeredRegion](https://warcraft.wiki.gg/wiki/UIOBJECT_LayeredRegion)
 --- @class __LayeredRegion
 local A = {}
+
+--- @alias LayeredRegion __LayeredRegion | Region
+
+--  The following is deprecated
 --- @alias _LayeredRegion __LayeredRegion|_Region
 
 --- Returns the layer at which the region's graphics are drawn relative to others in its frame.

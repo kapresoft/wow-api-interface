@@ -21,7 +21,7 @@ local LFGListingFrameActivityViewScrollBox = {
 local LFGFrameGroup = {
     --- @class LFGFrameGroupNameButton : _Button
     NameButton = {
-        --- @type _FontString
+        --- @type FontString
         Name = {}
     },
     --- @class LFGFrameGroupCheckButton : _Frame

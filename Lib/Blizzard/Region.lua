@@ -1,12 +1,18 @@
+--[[
+Hierarchy Explanation:
+ • UIObject: The base class for all UI elements in World of Warcraft.
+ • Region: Inherits from UIObject. It is a superclass for all types of regions that can be placed in a frame, including Texture and FontString.
+]]
+
 --- @class __Region
 ---#### Doc [UIOBJECT_Region](https://warcraft.wiki.gg/wiki/UIOBJECT_Region)
 local A = {}
 
---- @alias Region __Region | ScriptRegion
+--- @alias Region __Region | UIObject | ScriptRegion
 --- @alias SimpleRegion Region
 
 --  _Region and _SimpleRegion is deprecated
---- @alias _Region Region
+--- @alias _Region Region | UIObject
 --- @alias _SimpleRegion Region
 
 ---Returns the script name and line where the region was created.

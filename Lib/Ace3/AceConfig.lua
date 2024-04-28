@@ -2,6 +2,7 @@
 Types
 -------------------------------------------------------------------------------]]
 --- @class AceConfigOption
+--- @field disabled boolean Puts the config option in a read-only or gray state
 --- @field type string | "'group'" | "'range'" | "'select'" | "'toggle'" | "'input'" | "The type of the option ('group', 'range', 'select', 'toggle', 'input', etc.)"
 --- @field name string The name of the option displayed in the configuration GUI.
 --- @field desc string The description of the option displayed in the configuration GUI.

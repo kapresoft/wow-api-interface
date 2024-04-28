@@ -73,3 +73,22 @@ function UnitNameUnmodified(unit) end
 function GetRealmName() end
 --- @return string The name of the realm without spaces or - hyphens.
 function GetNormalizedRealmName() end
+
+--- Returns information about the spell currently being cast by the specified unit.
+--- #### Example:
+--- ```
+--- /dump UnitCastingInfo('player')
+--- ```
+--- @param unit UnitID  | "'player'" | "'target'" | "'focus'" | "'mouseover'" | "'none'" | "'pet'" | "'vehicle'" | "'-> The unit ID to query'"
+--- @return SpellName|nil, DisplayText|nil, TextureIDOrPath|nil, StartTime|nil, EndTime|nil, IsTradeSkill|nil, CastID|string, IsUninterruptible|nil, SpellID name, text, texture, startTimeMS, endTimeMS, isTradeSkill, castID, uninterruptible The name of the spell (or nil if no spell is being cast), display name, texture path, start time in milliseconds, end time in milliseconds, whether the cast is a tradeskill, the unique spell cast ID, whether the spell can be interrupted, and the spell's ID.
+function UnitCastingInfo(unit) end
+
+--- Checks if the specified unit is in a vehicle.
+--- @param unit UnitID The unitId to check, e.g., "player", "party1", "raid1", etc.
+--- @return boolean Returns `true` if the unit is in a vehicle, `false` otherwise.
+function UnitInVehicle(unit) end
+
+--- Checks if the specified unit is on taxi.
+--- @param unit UnitID The unitId to check, e.g., "player", "party1", "raid1", etc.
+--- @return boolean Returns `true` if the unit is on taxi, `false` otherwise.
+function UnitOnTaxi(unit) end
