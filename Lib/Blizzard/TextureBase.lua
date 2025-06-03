@@ -1,10 +1,10 @@
 --- @class __TextureBase
 local A = {}
 
---- @alias TextureBase __TextureBase|_Region
+--- @alias TextureBase __TextureBase| LayeredRegion
 
 --  The following is deprecated
---- @alias _TextureBase __TextureBase|_Region
+--- @alias _TextureBase __TextureBase| LayeredRegion
 
 
 function A:GetAtlas() end

@@ -1,3 +1,6 @@
+--- @class C_Spell Modern version of Spell Functions
+C_Spell = {}
+
 --[[-----------------------------------------------------------------------------
 Aliases
 -------------------------------------------------------------------------------]]
@@ -6,44 +9,85 @@ Aliases
 Types
 -------------------------------------------------------------------------------]]
 --- @class RuneSpellInfo
----@field public id SpellID The actual spell ID casted by the rune
----@field public name SpellName The actual spell name casted by the rune
+--- @field public id SpellID The actual spell ID casted by the rune
+--- @field public name SpellName The actual spell name casted by the rune
 
 --- @class SpellInfo
----@field public id SpellID The spell ID
----@field public name SpellName The spell Name
----@field public label string The spell label, i.e. "Windfury Weapon |c00747474(Rank 1)|r"
----@field public rank string The rank label number, i.e. "Rank 1"
----@field public link SpellLink
----@field public icon Icon The icon ID
----@field public castTime number The icon ID
----@field public minRange number The icon ID
----@field public maxRange number The icon ID
----@field public runeSpell RuneSpellInfo The actual spell that the run is casting
+--- @field public id SpellID The spell ID
+--- @field public name SpellName The spell Name
+--- @field public label string The spell label, i.e. "Windfury Weapon |c00747474(Rank 1)|r"
+--- @field public rank string The rank label number, i.e. "Rank 1"
+--- @field public link SpellLink
+--- @field public icon Icon The icon ID
+--- @field public castTime number The icon ID
+--- @field public minRange number The icon ID
+--- @field public maxRange number The icon ID
+--- @field public runeSpell RuneSpellInfo The actual spell that the run is casting
+
+--- @class SpellBookItemInfo
+--- @field public actionID number @Base spellID, flyoutID, or petActionID.
+--- @field public spellID number|nil @Overriding spellID if applicable, or same as actionID.
+--- @field public itemType number @Enum.SpellBookItemType (0=None, 1=Spell, 2=FutureSpell, 3=PetAction, 4=Flyout).
+--- @field public name string @Localized name of the spell or action.
+--- @field public subName string @Localized subtext (may be empty).
+--- @field public iconID number @FileID for the icon texture.
+--- @field public isPassive boolean @True if the spell is passive.
+--- @field public isOffSpec boolean @True if the spell belongs to an inactive spec.
+--- @field public skillLineIndex number|nil @Index of the associated skill line, if any.
+
+--- @class DeadlyDebuffInfo
+--- @field overrideCriticalTimeRemaining number The remaining critical time override amount. Not nil.
+--- @field priority number The priority level of the debuff. Not nil.
+--- @field warningText string The warning text associated with the debuff. Not nil.
+--- @field soundKitID number|nil The sound kit ID associated with the debuff. Nilable.
 
 --[[-----------------------------------------------------------------------------
 Support Functions
 -------------------------------------------------------------------------------]]
 
+--- Returns whether the player (or pet) knows the given spell.
+--- @param spellID SpellID @The spell ID to check.
+--- @param isPetSpell BooleanOptional If true, checks if the pet knows the spell; otherwise, checks the player.
+--- @return boolean isKnown Returns true if the player or pet knows the spell.
+function IsSpellKnown(spellID, isPetSpell) end
+
+--- Returns whether the given spell is currently toggled as an auto-repeat spell (e.g., "Shoot", "Auto Shot", "Throw").
+--- Works only for the **player's spells**, and returns true if that spell is currently active as an auto-attack.
+---
+--- @param spell SpellIdentifier  | "'Smite'" | "585"
+--- @return boolean isActive True if the spell is currently active as an auto-repeat
+function C_Spell.IsAutoRepeatSpell(spell) end
+IsAutoRepeatSpell = C_Spell.IsAutoRepeatSpell
+
+--- Determines whether the specified spell is currently toggled as the player's auto attack.
+--- This is equivalent to the global `IsCurrentSpell` function, but namespaced under `C_Spell` in Retail.
+---
+--- Note: This function only works for spells like "Attack" (spell ID 6603), not auto-repeat spells like "Shoot" or "Auto Shot".
+---
+--- @param spell SpellIdentifier The spell ID or localized name of the auto-attack spell (typically 6603 or "Attack")
+--- @return boolean isActive True if the spell is currently active as the player's auto attack
+function C_Spell.IsCurrentSpell(spell) end
+IsCurrentSpell = C_Spell.IsCurrentSpell
+
 --- Casts a spell from the spellbook.
 --- See: [API_CastSpell](https://warcraft.wiki.gg/wiki/API_CastSpell)
----@param spellIndex number The index of the spell in the spellbook.
----@param bookType string|nil @The type of spellbook. "spell" for spells, "pet" for pet spells. Defaults to "spell".
----@return void
+--- @param spellIndex number The index of the spell in the spellbook.
+--- @param bookType string|nil @The type of spellbook. "spell" for spells, "pet" for pet spells. Defaults to "spell".
+--- @return void
 function CastSpell(spellIndex, bookType) end
 
 --- Casts a spell by spell ID.
 --- See: [API_CastSpellByID](https://warcraft.wiki.gg/wiki/API_CastSpellByID)
----@param spellID number The ID of the spell to cast.
----@param target string|nil @The target of the spell. Optional.
----@return void
+--- @param spellID number The ID of the spell to cast.
+--- @param target string|nil @The target of the spell. Optional.
+--- @return void
 function CastSpellByID(spellID, target) end
 
 --- Casts a spell by name.
 --- See: [API_CastSpellByName](https://warcraft.wiki.gg/wiki/API_CastSpellByName)
----@param name string The name of the spell to cast.
----@param target string|nil @The target of the spell. Optional.
----@return void
+--- @param name string The name of the spell to cast.
+--- @param target string|nil @The target of the spell. Optional.
+--- @return void
 function CastSpellByName(name, target) end
 
 --- #### See: [API_IsUsableSpell](https://warcraft.wiki.gg/wiki/API_IsUsableSpell)
@@ -120,3 +164,8 @@ function GetSpellLink(spellName, spellRank) end
 function GetSpellCooldown(spell, bookType) end
 
 
+--- Returns detailed info for a spell book item at the specified slot and bank.
+--- @param spellBookItemSlotIndex number @Index from 1 through total number of spellbook entries.
+--- @param spellBookItemSpellBank number @Enum.SpellBookSpellBank (0 = Player, 1 = Pet)
+--- @return SpellBookItemInfo table containing spell book item details, or nil if unavailable.
+function C_SpellBook.GetSpellBookItemInfo(spellBookItemSlotIndex, spellBookItemSpellBank) end

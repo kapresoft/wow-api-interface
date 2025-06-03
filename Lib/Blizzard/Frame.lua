@@ -164,7 +164,7 @@ function A:SetFrameBuffer(enabled) end
 function A:SetFrameLevel(level) end
 
 ---Positions the frame within a z-axis interval.
---- @param strata string WORLD, BACKGROUND, LOW, MEDIUM, HIGH, DIALOG, FULLSCREEN, FULLSCREEN_DIALOG, TOOLTIP
+--- @param strata string | "'WORLD'" | "'BACKGROUND'" | "'LOW'" | "'MEDIUM'" | "'HIGH'" | "'DIALOG'" | "'FULLSCREEN'" | "'FULLSCREEN_DIALOG'" | "'TOOLTIP'"
 ---###Doc: [https://warcraft.wiki.gg/wiki/Frame_Strata](https://warcraft.wiki.gg/wiki/Frame_Strata)
 function A:SetFrameStrata(strata) end
 

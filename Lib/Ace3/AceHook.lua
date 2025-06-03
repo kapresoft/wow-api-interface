@@ -1,7 +1,12 @@
+--- @alias AceHookInterface AceHook
+
+--[[-----------------------------------------------------------------------------
+Type: AceHook
+-------------------------------------------------------------------------------]]
 --- @class AceHook
 local AceHook = { }
 
----@param o AceHook
+--- @param o AceHook
 local function PropsAndMethods(o)
 
     --- @param target any target object to embed AceHook in

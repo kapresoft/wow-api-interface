@@ -1,10 +1,18 @@
---- @class C_Timer_ReturnObject
-local _ReturnObject = {
-    --- @type fun(self:C_Timer_ReturnObject)
-    Cancel = {},
-    --- @type fun(self:C_Timer_ReturnObject) : boolean
-    IsCancelled = {},
-}
+--[[-----------------------------------------------------------------------------
+Type: Ticker
+-------------------------------------------------------------------------------]]
+
+--- Ticker object returned by C_Timer.NewTicker
+--- @class Ticker
+local Ticker = {}
+
+--- Cancels the ticker, stopping it from running again.
+function Ticker:Cancel() end
+
+--- Gets the number of iterations remaining before the ticker stops.
+--- @return number remainingIterations The number of iterations remaining.
+function Ticker:GetRemainingIterations() end
+
 --- @class C_Timer
 local A = {
     --- ### Schedules a timer
@@ -23,7 +31,7 @@ local A = {
     --- @param seconds number Time in seconds before the timer finishes.
     --- @param callback HandlerFnNoArg Callback function to run
     --- @param iterations number Number of times to repeat, or indefinite if omitted
-    --- @return C_Timer_ReturnObject Timer handle with :Cancel() and :IsCancelled() methods.
+    --- @return Ticker Timer handle with :Cancel() and :IsCancelled() methods.
     --- @type fun(seconds:number, callback:HandlerFnNoArg, iterations:number) : C_Timer_ReturnObject
     NewTimer = {},
 
@@ -36,8 +44,10 @@ local A = {
     --- @param seconds number Time in seconds before the timer finishes.
     --- @param callback HandlerFnNoArg Callback function to run
     --- @param iterations number Number of times to repeat, or indefinite if omitted
-    --- @return C_Timer_ReturnObject Timer handle with :Cancel() and :IsCancelled() methods.
+    --- @return Ticker Timer handle with :Cancel() and :IsCancelled() methods.
     --- @type fun(seconds:number, callback:HandlerFnNoArg, iterations:number) : C_Timer_ReturnObject
     NewTicker = {},
 }
 C_Timer = A
+
+

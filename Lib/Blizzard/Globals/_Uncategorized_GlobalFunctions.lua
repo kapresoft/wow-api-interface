@@ -10,3 +10,14 @@ function ToggleFramerate() end
 
 --- Reloads the UI
 function ReloadUI()  end
+
+
+--- @alias PatchVersion string
+--- @alias BuildNumberText string
+--- @alias DateText string
+--- @alias TOCVersion number
+--- @alias BuildType string | "'Release'" | "'Localized build type and machine architecture'"
+
+--- Retrieves detailed information about the current WoW client build.
+--- @return PatchVersion, BuildNumberText, DateText, TOCVersion, Ignored, BuildType The current patch version, build number, build date, interface (.toc) version number, localized translation for the string "Version", and the localized build type and machine architecture.
+function GetBuildInfo() end

@@ -1,5 +1,9 @@
 --- @class __Texture
 local A = {}
+
+--- @alias Texture __Texture|_TextureBase
+
+--  The following is deprecated
 --- @alias _Texture __Texture|_TextureBase
 
 --- @param mask _Object

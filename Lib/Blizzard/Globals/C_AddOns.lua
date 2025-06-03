@@ -36,12 +36,26 @@ function C_AddOns.GetAddOnDependencies(name) end
 GetAddOnDependencies = C_AddOns.GetAddOnDependencies
 
 --- Gets the enable state of an addon for a given character.
---- @param name Name The unique identifier of the addon.
+--- ##### Possible Return Values:
+--- ```
+--- 0 : None    Disabled
+--- 1 : Some    Enabled for some characters; this is only possible if character is nil.
+--- 2 : All     Enabled
+--- ```
+--- @param indexOrName Name The unique identifier of the addon.
 --- @param character string The character to check the addon's enable state, defaults to "0" if not specified.
 --- @return EnabledInt state The enable state of the addon.
-function C_AddOns.GetAddOnEnableState(name, character) end
---- @param character Name The character to check the addon's enable state, defaults to "0" if not specified.
---- @param indexOrName IndexOrName The index of the addon or name
+function C_AddOns.GetAddOnEnableState(indexOrName, character) end
+
+--- ##### Possible Return Values:
+--- ```
+--- 0 : None    Disabled
+--- 1 : Some    Enabled for some characters; this is only possible if character is nil.
+--- 2 : All     Enabled
+--- ```
+--- @param indexOrName Name The unique identifier of the addon.
+--- @param character string The character to check the addon's enable state, defaults to "0" if not specified.
+--- @return EnabledInt state The enable state of the addon.
 function GetAddOnEnableState(character, indexOrName) end
 
 --- Retrieves information about an addon.
@@ -58,6 +72,7 @@ GetAddOnInfo = C_AddOns.GetAddOnInfo
 --- @return string value The value of the requested metadata.
 function C_AddOns.GetAddOnMetadata(name, variable) end
 C_AddOns.GetAddOnMetadata = C_AddOns.GetAddOnMetadata
+GetAddOnMetadata = C_AddOns.GetAddOnMetadata
 
 --- Gets the optional dependencies of an addon.
 --- @param name Name The unique identifier of the addon.

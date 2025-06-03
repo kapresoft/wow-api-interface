@@ -1,5 +1,13 @@
 --- @alias MessageHandlerFn fun(msg:string, source:any, ...) | "function(msg, source, ...) end"
 --- @alias EventHandlerFn fun(event:string, source:any, ...) | "function(evt, source, ...) end"
+
+--  Use AceEventInterface alias in PropsAndMethods(o) so that
+--  EmmyLua doesn't add methods to AceEvent
+--- @alias AceEventInterface AceEvent
+
+--[[-----------------------------------------------------------------------------
+Type: AceEvent
+-------------------------------------------------------------------------------]]
 --- @class AceEvent
 local _AceEvent = {
     --- @param self AceEvent

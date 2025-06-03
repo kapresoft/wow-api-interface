@@ -28,12 +28,14 @@ The reason why the AddOn cannot be loaded. This is nil if the addon is loadable,
 --- @alias HandlerFn fun(arg:any) | "function(arg) end"
 --- @alias HandlerFnNoArg fun() | "function() end"
 --- @alias HexColor string | "'FFEEA0A0'" | "'AARRGGBB'"
+--- @alias HexColor6Digit string | "'EEA0A0'" | "'RRGGBB'"
 --- @alias Icon number The spell icon texture
 --- @alias IconPath string The path to icon texture
 --- @alias IconIDOrPath Icon|IconPath
---- @alias Texture Icon
+--- @alias Ignored any
+--- @alias TextureIcon Icon
 --- @alias TexturePath IconPath
---- @alias TextureIDOrPath Texture|TexturePath
+--- @alias TextureIDOrPath TextureIcon|TexturePath
 --- @alias Identifier number
 --- @alias Index number
 --- @alias IndexOrName number|string
@@ -62,7 +64,9 @@ The reason why the AddOn cannot be loaded. This is nil if the addon is loadable,
 --- @alias Title string
 --- @alias OptionalTimeDelayInMilli number|nil The time delay in milliseconds
 --- @alias TimeDelayInMilli number The time delay in milliseconds
----
+--- @alias TimeDelayInSec number The time delay in second(s)
+--- @alias TimeInSec number The time in second(s)
+--- @alias TimeInMilli number The time in millisecond(s)
 --- @alias CreatureDisplayInfoID number|nil
 --- @alias Description string
 --- @alias Source string
@@ -78,13 +82,14 @@ Booleans
 -------------------------------------------------------------------------------]]
 --- @alias Boolean boolean | "true" | "false"
 --- @alias BooleanOptional Boolean|nil | "nil" | "true" | "false"
+--- @alias BooleanInt number | "0" | "1" | "nil"
 --- @alias CannotBeCastedDueToLowMana boolean
 --- @alias CanSetFavorite boolean
 --- @alias Castable Boolean
 --- @alias Disabled Boolean
 --- @alias DisablePlayerMountPreview boolean
 --- @alias Enabled Boolean
---- @alias EnabledInt number | "0" | "1"
+--- @alias EnabledInt number | "0" | "1" | "2"
 --- @alias Include boolean
 --- @alias IsActive boolean
 --- @alias IsCastable boolean
@@ -98,6 +103,7 @@ Booleans
 --- @alias IsFavorite boolean
 --- @alias IsForDragonriding boolean
 --- @alias IsInclude boolean
+--- @alias IsInRange boolean
 --- @alias IsLoadable Boolean
 --- @alias IsSelfMount boolean
 --- @alias IsTradeSkill boolean
@@ -139,6 +145,7 @@ Spell
 --- @alias SpellID number
 --- @alias SpellId number
 --- @alias SpellName string
+--- @alias SpellIdentifier | "'Smite'" | "585"
 --- @alias SpellRank string
 --- @alias SpellLink string | "'Rank 1'" | "'Rank 2'"
 --- @alias SpellSubtext string

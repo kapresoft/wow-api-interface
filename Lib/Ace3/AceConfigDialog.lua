@@ -1,11 +1,14 @@
+--- @alias AceConfigDialogInterface AceConfigDialog
+
+--[[-----------------------------------------------------------------------------
+Type: AceConfigDialog
+-------------------------------------------------------------------------------]]
 --- @class AceConfigDialog
 --- @field OpenFrames table<string,_Frame>
 --- @field BlizOptions table<string,_Frame>
-local AceConfigDialog = {
+local AceConfigDialog = { }
 
-}
-
----@param o AceConfigDialog
+--- @param o AceConfigDialog
 local function PropsAndMethods(o)
 
     --- Sets the default size of the options window for a specific application.
