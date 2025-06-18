@@ -1,4 +1,4 @@
---- @alias GameVersion string | "'classic'" | "'tbc_classic'" | "'wotlk_classic'" | "'cataclysm_classic'" | "'retail'"
+--- @alias GameVersion string | "'classic'" | "'tbc_classic'" | "'wotlk_classic'" | "'cataclysm_classic'" | "'mop_classic'" | "'retail'"
 
 --- @alias VersionText string
 --- @alias CurseForgeUrl string
