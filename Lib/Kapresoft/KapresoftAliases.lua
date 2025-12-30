@@ -7,6 +7,10 @@
 --- @alias LastUpdateDate string
 --- @alias WowInterfaceVersion string
 
+--- @alias NeitherHelpOrHarmful boolean
+--- @alias Helpful boolean
+--- @alias Harmful boolean
+
 --- @class AddOnMetaInfo
 --- @field version VersionText
 --- @field curseForge CurseForgeUrl
@@ -14,3 +18,4 @@
 --- @field repo RepoUrl
 --- @field lastUpdate LastUpdateDate
 --- @field interfaceVersion WowInterfaceVersion
+

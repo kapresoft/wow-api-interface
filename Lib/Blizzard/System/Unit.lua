@@ -1,3 +1,16 @@
+--[[-----------------------------------------------------------------------------
+Unit Aliases
+-------------------------------------------------------------------------------]]
+--- @alias CompanionType string | "'MOUNT'" | "'CRITTER'"
+--- @alias CharacterFrameName string | "'PaperDollFrame'" | "'SkillFrame'" | "'PVPFrame'" | "'ReputationFrame'" | "'TokenFrame'"
+--- @alias UnitID string | "'player'" | "'target'" | "'focus'" | "'mouseover'" | "'none'" | "'pet'" | "'vehicle'"
+--- @alias UnitAuraFilter string | "'HELPFUL'" | "'HARMFUL'"
+--- @alias UnitClassLocalizedName string | "'warrior'" | "'paladin'"
+--- UnitClass is the locale-independent name
+--- @alias UnitClass string | "'WARRIOR'" | "'PALADIN'" | "'HUNTER'" | "'ROGUE'" | "'PRIEST'" | "'DEATHKNIGHT'" | "'SHAMAN'" | "'MAGE'" | "'WARLOCK'" | "'MONK'" | "'DRUID'" | "'DEMONHUNTER'" | "'EVOKER'"
+--- @alias UnitClassID number | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12" | "13"
+--- @alias BuffName string
+
 --- #### See: [API_UnitAura#ForEachAura](https://warcraft.wiki.gg/wiki/API_UnitAura#ForEachAura)
 --- #### Example
 --- ```
@@ -19,6 +32,14 @@ function UnitAura(unit, index, filter) end
 --- @param filter string|nil Optional. A filter to restrict the buffs to query (e.g., "CANCELABLE", "NOT_CANCELABLE").
 --- @return BuffName, Count, number|nil, string|nil, number|nil, number|nil, number|nil, boolean|nil, boolean|nil, number|nil, boolean|nil, boolean|nil, boolean|nil, number|nil name, icon, count, debuffType, duration, expirationTime, source, isStealable, nameplateShowPersonal, spellId, canApplyAura, isBossAura, castByPlayer, timeMod The buff information.
 function UnitBuff(unit, index, filter) end
+
+--- #### Example:
+--- ```
+--- className, classFilename, classId = UnitClass('player')
+--- ```
+--- @param unit UnitID
+--- @return UnitClassLocalizedName, UnitClass, UnitClassID
+function UnitClassBase(unit) end
 
 --- #### Example:
 --- ```

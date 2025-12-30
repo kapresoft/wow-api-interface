@@ -169,3 +169,28 @@ function GetSpellCooldown(spell, bookType) end
 --- @param spellBookItemSpellBank number @Enum.SpellBookSpellBank (0 = Player, 1 = Pet)
 --- @return SpellBookItemInfo table containing spell book item details, or nil if unavailable.
 function C_SpellBook.GetSpellBookItemInfo(spellBookItemSlotIndex, spellBookItemSpellBank) end
+
+--[[-----------------------------------------------------------------------------
+Globals
+-------------------------------------------------------------------------------]]
+
+--- Retrieves information about a spell in the player's spellbook.
+--- Can be called either by name (if known and learned) or by index/bookType.
+---
+--- Usage (by name):
+--- ```lua
+--- local name, subName, id = GetSpellBookItemName("Lesser Heal")
+--- ```
+---
+--- Usage (by index/bookType):
+--- ```lua
+--- local name, subName, id = GetSpellBookItemName(1, "spell")
+--- ```
+--- #### Returned values:
+--- - SpellName:    The name of the spell as it appears in the spellbook (e.g., "Lesser Heal")
+--- - SpellSubName: The subtext or rank of the spell (e.g., "Rank 1", "Racial Passive"). May be an empty string.
+--- - SpellID:      The global spell ID for the spell, if available
+--- @param spellOrIndex string|number Spell name (must be in spellbook) or spellbook index (1-based)
+--- @param bookType string|nil Optional. One of "spell", "pet", etc. Only required when using an index.
+--- @return SpellName, SpellSubName, SpellID
+function GetSpellBookItemName(spellOrIndex, bookType) end

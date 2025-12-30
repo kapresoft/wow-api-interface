@@ -7,7 +7,8 @@ local A = {}
 --- @alias _GameTooltip __GameTooltip | _Frame
 
 --- @type GameTooltip
-GameTooltip = A
+local tt = A
+GameTooltip = tt
 
 function A:AddAtlas(atlas, minx, maxx, miny, maxy) end
 function A:AddDoubleLine(textL, textR, rL, gL, bL, rR, gR, bR) end
@@ -138,8 +139,12 @@ function A:SetMinimumWidth(width) end
 function A:SetPetAction(slot) end
 --- Shows the tooltip for the specified shapeshift form.
 function A:SetShapeshift(slot) end
+
 --- Shows the tooltip for the specified spell in the spellbook.
-function A:SetSpellBookItem(spellId, bookType) end
+--- @param spellBookId number The id of the spell on the tab from the spellbook - not the same as SpellId
+--- @param bookType string | "BOOKTYPE_SPELL" | "BOOKTYPE_PET" |
+function A:SetSpellBookItem(spellBookId, bookType) end
+
 --- Shows the tooltip for the specified spell by global spell ID.
 function A:SetSpellByID(spellId) end
 --- Shows the tooltip for the specified talent.

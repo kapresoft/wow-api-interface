@@ -1,0 +1,5 @@
+@startuml
+UIObject <|-- Region
+Region <|-- Frame
+Frame <|-- Slider
+@enduml

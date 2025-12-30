@@ -1,0 +1,14 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+Frame <|-- ScrollFrame
+ScrollFrame *-- ScrollChild : scrollChild
+ScrollFrame *-- Slider : scrollBar
+
+Frame <|-- Slider
+Frame <|-- ScrollChild
+
+ScrollChild *-- RowFrame : children
+RowFrame *-- Button : icon buttons
+
+@enduml

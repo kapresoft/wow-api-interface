@@ -5,6 +5,10 @@ Hierarchy Explanation:
  • Frame: Inherits from Region. This is the basic container used for most UI elements and can handle events, scripts, and contain other Regions.
 ]]
 
+--- @class FFrame : __Frame, __Region
+local f = {}
+
+
 --[[-----------------------------------------------------------------------------
 Frame Globals
 -------------------------------------------------------------------------------]]

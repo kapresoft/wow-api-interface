@@ -50,6 +50,8 @@ The reason why the AddOn cannot be loaded. This is nil if the addon is loadable,
 --- @alias OriginalIcon Icon The original icon texture for this spell
 --- @alias PredicateFn fun(arg1:any, arg2:any) | "function(arg1, arg2, ...) end"
 --- @alias RegionPointString string | "'TOPLEFT'" | "'TOPRIGHT'" | "'BOTTOMLEFT'" | "'BOTTOMRIGHT'" | "'TOP'" | "'BOTTOM'" | "'LEFT'" | "'RIGHT'" | "'CENTER'"
+--- @alias FramePoint RegionPointString | "'TOPLEFT'" | "'TOPRIGHT'" | "'BOTTOMLEFT'" | "'BOTTOMRIGHT'" | "'TOP'" | "'BOTTOM'" | "'LEFT'" | "'RIGHT'" | "'CENTER'"
+--- @alias AnchorPoint RegionPointString | "'TOPLEFT'" | "'TOPRIGHT'" | "'BOTTOMLEFT'" | "'BOTTOMRIGHT'" | "'TOP'" | "'BOTTOM'" | "'LEFT'" | "'RIGHT'" | "'CENTER'"
 --- @alias RegionReference _Region | _ParentedObject | string | "'UIParent'" | "'FrameNameOrObj'"
 --- @alias RGBColor number | "0.0" | "1.0"
 --- @alias ScriptType string | "'OnEvent'" | "'OnShow'" | "'OnHide'" | "'OnClick'" | "'OnDoubleClick'" | "'OnDragStart'" | "'OnDragStop'" | "'OnReceiveDrag'" | "'PreClick'" | "'PostClick'" | "'OnLoad'" | "'OnUpdate'" | "'OnFinished'" | "'OnLoop'" | "'OnPause'" | "'OnPlay'" | "'OnStop'" | "'OnAttributeChanged'" | "'OnChar'" | "'OnEnable'" | "'OnDisable'" | "'OnEnter'" | "'OnLeave'" | "'OnKeyUp'" | "'OnKeyDown'" | "'OnMouseDown'" | "'OnMouseUp'" | "'OnMouseWheel'" | "'OnEnterPressed'" | "'OnEscapePressed'" | "'OnTabPressed'" | "'OnSpacePressed'" | "'OnCursorChanged'" | "'OnEditFocusGained'" | "'OnEditFocusLost'" | "'OnTextChanged'" | "'OnTextSet'"  | "'OnTooltipSetItem'" | "'OnValueChanged'"
@@ -125,17 +127,6 @@ Frame
 -------------------------------------------------------------------------------]]
 --- @alias FrameStrata string | "'WORLD'" | "'BACKGROUND'" | "'LOW'" | "'MEDIUM'" | "'HIGH'" | "'DIALOG'" | "'FULLSCREEN'" | "'FULLSCREEN_DIALOG'" | "'TOOLTIP'"
 --- @alias FrameLevel number | "1" | "10" | "100" | "200"
---[[-----------------------------------------------------------------------------
-Unit
--------------------------------------------------------------------------------]]
---- @alias CompanionType string | "'MOUNT'" | "'CRITTER'"
---- @alias CharacterFrameName string | "'PaperDollFrame'" | "'SkillFrame'" | "'PVPFrame'" | "'ReputationFrame'" | "'TokenFrame'"
---- @alias UnitID string | "'player'" | "'target'" | "'focus'" | "'mouseover'" | "'none'" | "'pet'" | "'vehicle'"
---- @alias UnitAuraFilter string | "'HELPFUL'" | "'HARMFUL'"
---- @alias UnitClassLocalizedName string | "'warrior'" | "'paladin'"
---- @alias UnitClass string | "'WARRIOR'" | "'PALADIN'" | "'HUNTER'" | "'ROGUE'" | "'PRIEST'" | "'DEATHKNIGHT'" | "'SHAMAN'" | "'MAGE'" | "'WARLOCK'" | "'MONK'" | "'DRUID'" | "'DEMONHUNTER'" | "'EVOKER'"
---- @alias UnitClassID number | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12" | "13"
---- @alias BuffName string
 
 --[[-----------------------------------------------------------------------------
 Spell
@@ -145,7 +136,9 @@ Spell
 --- @alias SpellID number
 --- @alias SpellId number
 --- @alias SpellName string
---- @alias SpellIdentifier | "'Smite'" | "585"
+--- @alias SpellSubName string
+--- @alias SpellIdentifier SpellID|SpellName | "'Smite'" | "585"
+--- @alias EffectiveSpellIdentifier SpellIdentifier The effective SpellIdentifier resolved from spells, items or macros
 --- @alias SpellRank string
 --- @alias SpellLink string | "'Rank 1'" | "'Rank 2'"
 --- @alias SpellSubtext string
@@ -164,31 +157,10 @@ Spell
 --- @alias MaxRange Range Maximum range of the spell, or 0 if not applicable.
 
 --[[-----------------------------------------------------------------------------
-Item
--------------------------------------------------------------------------------]]
---- @alias ItemID number | "1"
---- @alias ItemName string | "'Conjured Mana Biscuit'"
---- @alias ItemLink string | "'|cffxxxxxx|Hitem:payload|h[text]|h|r'" | "'|cff0070dd|Hitem:80921:4721:::::::36:103::1:::::::|h[Saboteur's Stabilizing Bracers]|h|r'"
---- @alias ItemType string The localized type name of the item: Armor, Weapon, Quest, etc.
---- @alias ItemID_Link_Or_Name number|string
---- @alias StrippedItemLink string The stripped item link
---- @alias ItemQuality number The Enum.ItemQuality number value
---- @alias ItemLevel number The base item level, not including upgrades. See GetDetailedItemLevelInfo() for getting the actual item level.
---- @alias ItemSubType string The localized sub-type name of the item: Bows, Guns, Staves, etc.
---- @alias ItemStackCount number The max amount of an item per stack, e.g. 200 for Runecloth.
---- @alias ItemEquipLoc string The inventory equipment location in which the item may be equipped e.g. "INVTYPE_HEAD", or an empty string if it cannot be equipped [ItemEquipLoc]
---- @alias ItemTexture number FileID - The texture for the item icon.
---- @alias SellPrice number The vendor price in copper, or 0 for items that cannot be sold.
---- @alias ClassID number The numeric ID of itemType
---- @alias SubclassID number The numeric ID of itemSubType [ItemType]
---- @alias BindType number When the item becomes soul bound, e.g. 1 for Bind on Pickup items [LE_ITEM_BIND]
---- @alias ExpacID number The related Expansion, e.g. 8 for Shadowlands. On Classic this appears to be always 254 [LE_EXPANSION]
---- @alias SetID number? ItemSetID - For example 761 for  [Red Winter Hat] (itemID 21524).
-
---[[-----------------------------------------------------------------------------
 Macro
 -------------------------------------------------------------------------------]]
---- @alias MacroNameOrSlot string|number
+--- @alias MacroIdentifier string|number Macro name or slot/index
+--- @alias MacroNameOrSlot string|number deprecated
 --- @alias MacroName string
 --- @alias MacroBody string
 
