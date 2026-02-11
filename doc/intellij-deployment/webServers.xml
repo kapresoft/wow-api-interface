@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="cfe86395-675c-40c5-9c6e-6998ce37532a" name="classic-era-mac" url="http://localhost">
+        <fileTransfer mountedRoot="/Applications/wow/_classic_era_/Interface/AddOns" accessType="MOUNT" port="0" />
+      </webServer>
+      <webServer id="af7613ed-a718-4afa-8f65-913af06b9bd4" name="classic-mac" url="http://localhost">
+        <fileTransfer mountedRoot="/Applications/wow/_classic_/Interface/AddOns" accessType="MOUNT" port="0" />
+      </webServer>
+      <webServer id="13d1abad-5b07-4019-9c03-c46f88c3dd86" name="retail-mac" url="http://localhost">
+        <fileTransfer mountedRoot="/Applications/wow/_retail_/Interface/AddOns" accessType="MOUNT" port="0" />
+      </webServer>
+      <webServer id="00950856-c68e-4e9c-941d-f8746035520c" name="classic-mop-beta" url="http://localhost">
+        <fileTransfer mountedRoot="/Applications/wow/_classic_beta_/Interface/AddOns" accessType="MOUNT" port="0" />
+      </webServer>
+      <webServer id="bc12e4ed-6e23-4356-883b-b7e55da37a53" name="anniversary" url="http://localhost">
+        <fileTransfer mountedRoot="/Applications/wow/_anniversary_/Interface/AddOns" accessType="MOUNT" port="0" />
+      </webServer>
+    </option>
+    <groups>
+      <group>
+        <name>Mac</name>
+        <servers>
+          <name value="classic-era-mac" />
+          <name value="classic-mac" />
+          <name value="retail-mac" />
+          <name value="classic-mop-beta" />
+        </servers>
+      </group>
+    </groups>
+  </component>
+</project>

@@ -1,0 +1,1 @@
+--- @alias GameVersion string | "'classic-era'" | "'tbc'" | "'tbc_classic'" | "'tbc_anniversary'" | "'wotlk'" | "'cataclysm'" | "'mists'" | "'mainline'"

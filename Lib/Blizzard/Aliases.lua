@@ -2,82 +2,89 @@
 Common
 The reason why the AddOn cannot be loaded. This is nil if the addon is loadable, otherwise it contains a string token indicating the reason that can be localized by prepending "ADDON_". ("BANNED", "CORRUPT", "DEMAND_LOADED", "DISABLED", "INCOMPATIBLE", "INTERFACE_VERSION", "MISSING")
 -------------------------------------------------------------------------------]]
+--- @alias Nil nil This is so that it shows up in intellij tooling
+--- @alias Optional nil This is so that it shows up in intellij tooling
+--
+--
+--
 --- @alias ActionTypeName EnumString | "'spell'" | "'item'" | "'macro'" | "'macrotext'" | "'petaction'" | "'money'" | "'mount'" | "'companion'" | "'merchant'" | "'battlepet'" | "'equipmentset'"
 --- @alias AddOnIsNotLoadableReason EnumString | "'The reason why the AddOn cannot be loaded.'" | "'BANNED'" | "'CORRUPT'" | "'DEMAND_LOADED'" | "'DISABLED'" | "'INCOMPATIBLE'" | "'INTERFACE_VERSION'" | "'MISSING'"
 --- @alias AddOnName string | "'The name of the AddOn (the folder name)'"
 --- @alias AddOnSecurity EnumString | "'Indicates the security status of the AddOn.'" | "'SECURE_PROTECTED'"| "'INSECURE'"| "'SECURE'"
 --- @alias AddOnTitle string | "'The title of the AddOn as listed in the .toc file'"
 --- @alias Alpha number | "0.0" | "1.0"
+--- @alias AnchorPoint RegionPointString | "'TOPLEFT'" | "'TOPRIGHT'" | "'BOTTOMLEFT'" | "'BOTTOMRIGHT'" | "'TOP'" | "'BOTTOM'" | "'LEFT'" | "'RIGHT'" | "'CENTER'"
+--- @alias AnimId number
 --- @alias BookType EnumString | "BOOKTYPE_SPELL" | "BOOKTYPE_PET" | "BOOKTYPE_PROFESSION" | "'spell'" | "'pet'"
 --- @alias BookTypeOptional BookType
 --- @alias CooldownType string | "'spell'" | "'item'" | "'macro'"
 --- @alias Count Number
---- @alias NumberOfMounts Number
+--- @alias CreatureDisplayInfoID number|nil
 --- @alias DataProviderFilterFn fun(elem:DataProviderElement) : Boolean | "function(elem) return true end"
 --- @alias DataProviderHandlerFn fun(elem:DataProviderElement) | "function(elem) print('elem:', pformat(elem)) end"
---- @alias DrawLayer EnumString | "'BACKGROUND'" | "'BORDER'" | "'ARTWORK'" | "'OVERLAY'"  | "'HIGHLIGHT'"
+--- @alias Description string
 --- @alias DisplayText string
+--- @alias DrawLayer EnumString | "'BACKGROUND'" | "'BORDER'" | "'ARTWORK'" | "'OVERLAY'"  | "'HIGHLIGHT'"
 --- @alias Duration number | "1.0"
 --- @alias Enable number | "0" | "1"
---- @alias EventName string Blizzard Event Name
+--- @alias EndTime number | "1.0" | "'In Milliseconds'"
 --- @alias EnumString string An enumerated string value
+--- @alias EventName string Blizzard Event Name
 --- @alias Faction number|nil
 --- @alias FontName string | "'GameFontNormal'" | "'GameFontNormalMed1'" | "'GameFontNormalOutline'" | "'QuestFontNormalHuge'" | "'GameFontHighlight'" | "'GameTooltipTextSmall'" | "'NumberFontNormalSmall'"
 --- @alias FrameEvent string | "'PLAYER_LOG_IN'" | "'PLAYER_LOG_OUT'" | "'PLAYER_STARTED_MOVING'" | "'PLAYER_STOPPED_MOVING'" | "'etc...'"
+--- @alias FramePoint RegionPointString | "'TOPLEFT'" | "'TOPRIGHT'" | "'BOTTOMLEFT'" | "'BOTTOMRIGHT'" | "'TOP'" | "'BOTTOM'" | "'LEFT'" | "'RIGHT'" | "'CENTER'"
 --- @alias FrameType string | "'Frame'" | "'Button'" | "'CheckButton'" | "'Cooldown'" | "'Editbox'" | "'GameTooltip'" | "'ScrollFrame'" | "'Slider'" | "'MessageFrame'"
 --- @alias HandlerFn fun(arg:any) | "function(arg) end"
 --- @alias HandlerFnNoArg fun() | "function() end"
 --- @alias HexColor string | "'FFEEA0A0'" | "'AARRGGBB'"
 --- @alias HexColor6Digit string | "'EEA0A0'" | "'RRGGBB'"
 --- @alias Icon number The spell icon texture
---- @alias IconPath string The path to icon texture
 --- @alias IconIDOrPath Icon|IconPath
---- @alias Ignored any
---- @alias TextureIcon Icon
---- @alias TexturePath IconPath
---- @alias TextureIDOrPath TextureIcon|TexturePath
+--- @alias IconPath string The path to icon texture
 --- @alias Identifier number
+--- @alias Ignored any
 --- @alias Index number
 --- @alias IndexOrName number|string
+--- @alias LuaIndex number The first element is 1
 --- @alias MountID number
 --- @alias MountName string
+--- @alias MountTypeID number
 --- @alias Name string
 --- @alias NonNegativeNumber number | "0" | "1" | "2"
 --- @alias Notes string
 --- @alias Number number | "0"
+--- @alias NumberOfMounts Number
 --- @alias ObjectType string | "'Frame'" | "'Button'" | "'FontString'"
 --- @alias OptionalTable table
+--- @alias OptionalTimeDelayInMilli number|nil The time delay in milliseconds
 --- @alias OriginalIcon Icon The original icon texture for this spell
---- @alias PredicateFn fun(arg1:any, arg2:any) | "function(arg1, arg2, ...) end"
---- @alias RegionPointString string | "'TOPLEFT'" | "'TOPRIGHT'" | "'BOTTOMLEFT'" | "'BOTTOMRIGHT'" | "'TOP'" | "'BOTTOM'" | "'LEFT'" | "'RIGHT'" | "'CENTER'"
---- @alias FramePoint RegionPointString | "'TOPLEFT'" | "'TOPRIGHT'" | "'BOTTOMLEFT'" | "'BOTTOMRIGHT'" | "'TOP'" | "'BOTTOM'" | "'LEFT'" | "'RIGHT'" | "'CENTER'"
---- @alias AnchorPoint RegionPointString | "'TOPLEFT'" | "'TOPRIGHT'" | "'BOTTOMLEFT'" | "'BOTTOMRIGHT'" | "'TOP'" | "'BOTTOM'" | "'LEFT'" | "'RIGHT'" | "'CENTER'"
---- @alias RegionReference _Region | _ParentedObject | string | "'UIParent'" | "'FrameNameOrObj'"
+--- @alias PredicateFn fun() : boolean | "function() return true end"
 --- @alias RGBColor number | "0.0" | "1.0"
+--- @alias RGBHex string The 6-char RGBHex color string, i.e. EFEFEF
+--- @alias RegionPointString string | "'TOPLEFT'" | "'TOPRIGHT'" | "'BOTTOMLEFT'" | "'BOTTOMRIGHT'" | "'TOP'" | "'BOTTOM'" | "'LEFT'" | "'RIGHT'" | "'CENTER'"
+--- @alias RegionReference _Region | _ParentedObject | string | "'UIParent'" | "'FrameNameOrObj'"
 --- @alias ScriptType string | "'OnEvent'" | "'OnShow'" | "'OnHide'" | "'OnClick'" | "'OnDoubleClick'" | "'OnDragStart'" | "'OnDragStop'" | "'OnReceiveDrag'" | "'PreClick'" | "'PostClick'" | "'OnLoad'" | "'OnUpdate'" | "'OnFinished'" | "'OnLoop'" | "'OnPause'" | "'OnPlay'" | "'OnStop'" | "'OnAttributeChanged'" | "'OnChar'" | "'OnEnable'" | "'OnDisable'" | "'OnEnter'" | "'OnLeave'" | "'OnKeyUp'" | "'OnKeyDown'" | "'OnMouseDown'" | "'OnMouseUp'" | "'OnMouseWheel'" | "'OnEnterPressed'" | "'OnEscapePressed'" | "'OnTabPressed'" | "'OnSpacePressed'" | "'OnCursorChanged'" | "'OnEditFocusGained'" | "'OnEditFocusLost'" | "'OnTextChanged'" | "'OnTextSet'"  | "'OnTooltipSetItem'" | "'OnValueChanged'"
 --- @alias ScriptTypeEventHandler fun(self:any, event:string) | "function(self, event) print('Event received:', event) end"
+--- @alias SoundChannel string | "'SFX'" | "'Effects'" | "'Music'" | "'Ambience'" | "'Dialog'" | "'Master'"
+--- @alias Source string
 --- @alias SourceType number
 --- @alias SpecializationIndex number | "1" | "2" | "3"
 --- @alias SpecializationIndexOptional SpecializationIndex | "nil" | "1" | "2" | "3"
+--- @alias SpellVisualKitID number
 --- @alias StartTime number | "1.0" | "'In Milliseconds'"
---- @alias EndTime number | "1.0" | "'In Milliseconds'"
 --- @alias SubDrawLayer number | "-8"| "-7"| "-6"| "-5" | "-4"| "-3"| "-2"| "-1" | "0"| "1"| "2"| "3" | "4"| "5"| "6" | "7"
 --- @alias SubType string
---- @alias Title string
---- @alias OptionalTimeDelayInMilli number|nil The time delay in milliseconds
+--- @alias TextureIDOrPath TextureIcon|TexturePath
+--- @alias TextureIcon Icon
+--- @alias TexturePath IconPath
 --- @alias TimeDelayInMilli number The time delay in milliseconds
 --- @alias TimeDelayInSec number The time delay in second(s)
---- @alias TimeInSec number The time in second(s)
 --- @alias TimeInMilli number The time in millisecond(s)
---- @alias CreatureDisplayInfoID number|nil
---- @alias Description string
---- @alias Source string
---- @alias MountTypeID number
+--- @alias TimeInSec number The time in second(s)
+--- @alias Title string
 --- @alias UiModelSceneID number
---- @alias AnimId number
---- @alias SpellVisualKitID number
 --- @alias UseError string|nil
---- @alias LuaIndex number The first element is 1
 
 --[[-----------------------------------------------------------------------------
 Booleans

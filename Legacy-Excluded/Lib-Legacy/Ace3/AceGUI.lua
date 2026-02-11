@@ -1,6 +1,6 @@
 --- @alias AceGUICallbackFn fun() | "function() print('hello') end"
 
------- @class AceGUI
+--- @class AceGUI
 --- @field WidgetBase WidgetBase
 --- @field SetWidth fun(self:AceGUI, width:number) Sets the width of the widget.
 --- @field SetHeight fun(self:AceGUI, height:number) Sets the height of the widget.
