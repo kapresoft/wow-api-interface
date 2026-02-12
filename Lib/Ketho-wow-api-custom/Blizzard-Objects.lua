@@ -1,18 +1,3 @@
--- aliases for emmy lua
---- @alias FrameObj Frame|ScriptRegion|ScriptRegionResizing|AnimatableObject|ScriptObject
---- @alias FrameObjWithBackdrop FrameObj|BackdropTemplateMixin
---- @alias ButtonObj Button|FrameObj
---- @alias ButtonObjWithBackdrop ButtonObj|BackdropTemplateMixin
---- @alias CheckButtonObj CheckButton|ButtonObj
---- @alias ScrollFrameObj ScrollFrameTemplate__ | ScrollFrame | FrameObj
---- @alias FontStringObj FontString|ScriptRegion|ScriptRegionResizing|AnimatableObject
---- @alias TextureObj Texture|Region|ScriptRegionResizing|AnimatableObject
---- @alias EditBoxObj EditBox|FrameObj
---[[-------------------------------------------------------------------
-ScrollFrameTemplate
----------------------------------------------------------------------]]
---- @class ScrollFrameTemplate__ : Frame
---- @field ScrollChild Frame
 --[[-------------------------------------------------------------------
 ObjectPoolBaseMixin
 --- Base mixin shared by secure and unsecured object pools.
