@@ -75,8 +75,8 @@ The reason why the AddOn cannot be loaded. This is nil if the addon is loadable,
 --- @alias StartTime number | "1.0" | "'In Milliseconds'"
 --- @alias SubDrawLayer number | "-8"| "-7"| "-6"| "-5" | "-4"| "-3"| "-2"| "-1" | "0"| "1"| "2"| "3" | "4"| "5"| "6" | "7"
 --- @alias SubType string
---- @alias TextureIDOrPath TextureIcon|TexturePath
---- @alias TextureIcon Icon
+--- @alias TextureIDOrPath TextureIcon|TexturePath @deprecated Use TextureIcon
+--- @alias TextureIcon Icon|IconPath|"'interface\buttons\buttonhilight-square'" | "12345"
 --- @alias TexturePath IconPath
 --- @alias TimeDelayInMilli number The time delay in milliseconds
 --- @alias TimeDelayInSec number The time delay in second(s)

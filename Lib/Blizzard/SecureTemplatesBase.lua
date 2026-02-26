@@ -1,0 +1,2 @@
+--- @see SecureTemplatesBase.xml
+--- @class SecureFrameTemplate : Frame

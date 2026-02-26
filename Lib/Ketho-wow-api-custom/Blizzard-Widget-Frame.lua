@@ -8,6 +8,7 @@
 --- @alias FontStringObj FontString|ScriptRegion|ScriptRegionResizing|AnimatableObject
 --- @alias TextureObj Texture|Region|ScriptRegionResizing|AnimatableObject
 --- @alias EditBoxObj EditBox|FrameObj
+--- @alias CooldownObj Cooldown|FrameObj
 --[[-------------------------------------------------------------------
 ScrollFrameTemplate
 ---------------------------------------------------------------------]]

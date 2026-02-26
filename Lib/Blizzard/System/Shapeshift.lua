@@ -1,0 +1,6 @@
+--- @class ShapeshiftFormData
+--- @field index number          @Shapeshift form index
+--- @field icon number           @Texture fileID of the form icon
+--- @field active boolean        @True if this form is currently active
+--- @field castable boolean      @True if the form can currently be cast
+--- @field spellID number        @The spellID associated with this form
